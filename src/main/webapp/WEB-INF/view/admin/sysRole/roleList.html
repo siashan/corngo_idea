@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'角色管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+    <link rel="stylesheet" href="${ctxPath}/resource/lib/bsgrid/merged/grid.simple.min.css"/>
+    <link rel="stylesheet" href="${ctxPath}/resource/lib/bsgrid/css/skins/grid_bootstrap.min.css"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content" >
+
+        <!-- page heading start-->
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group">
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "新增 " s="sys:role:add" func = "addRole()" icon = "fa fa-plus" req = "${request}" />
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "修改 " s="sys:role:edit" func = "updateRole()" icon = "fa fa-edit" req = "${request}" />
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "删除 " s="sys:role:del" func = "delRole()" icon = "fa fa-trash-o" req = "${request}" />
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                                <table id="searchTable">
+                                    <tr>
+                                        <th w_hidden="true" w_index="id" width="10%;"></th>
+                                        <th w_index="name" width="10%">角色名称</th>
+                                        <th w_index="createTime" width="10%;">创建时间</th>
+                                        <th w_index="remark" width="10%;">描述</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+<!--bsgrid-->
+<script src="${ctxPath}/resource/lib/bsgrid/merged/bsgrid.all.min.js"></script>
+<script src="${ctxPath}/resource/lib/bsgrid/js/lang/grid.zh-CN.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/admin/sysRole/roleList.js"></script>
+</body>
+</html>

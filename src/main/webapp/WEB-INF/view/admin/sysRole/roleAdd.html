@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'角色管理'}){}%>
+    <!--common-->
+    <link rel="stylesheet" href="${ctxPath}/resource/lib/ztree/css/metroStyle/metroStyle.css"/>
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content" >
+
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group">
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                            </div>
+                            <form class="form-horizontal" role="form" id="form1">
+                                <input type="hidden" id="id" name="id" value="${sysRole.id!}">
+                                <input type="hidden" name="_token" value="${session._token}">
+
+                                <div class="form-group">
+                                    <label for="name" class="col-lg-3 col-sm-3 control-label">角色名称</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                               value="${sysRole.name!}"
+                                               placeholder="请填写角色名称"
+                                               data-rule="角色名称:required"
+                                               data-target="#name-tip">
+
+                                        <p class="help-block" id="name-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="remark" class="col-lg-3 col-sm-3 control-label">角色描述</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="remark" name="remark"
+                                               value="${sysRole.remark!}"
+                                               data-target="#cnname-tip">
+
+                                        <p class="help-block" id="cnname-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-lg-3 col-sm-3 control-label">角色权限</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="hidden" class="form-control" id="menus" name="menus">
+                                        <section class="panel">
+                                            <div class="panel-body">
+                                                <ul id="treeDemo" class="ztree" style="width:100%;"></ul>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-offset-3 col-lg-6 col-sm-12">
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="mySubmit()">保&nbsp;&nbsp; 存
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-2"></div>
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="javascript:window.location='${ctxPath}/admin/sysRole'">返&nbsp;&nbsp;
+                                                回
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.jss"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+<link rel="stylesheet" href="${ctxPath}/resource/lib/validate/jquery.validator.css">
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/jquery.validator.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/local/zh-CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/jquery/jquery.form.js"></script>
+<script src="${ctxPath}/resource/lib/ztree/js/jquery.ztree.all.js"></script>
+<!--bsgrid-->
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/admin/sysRole/roleAdd.js"></script>
+<script>
+    var treeData = ${treeData};
+</script>
+</body>
+</html>

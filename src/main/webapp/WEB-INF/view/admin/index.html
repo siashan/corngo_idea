@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'首页'}){}%>
+
+  <!--common-->
+  <link href="${ctxPath}/resource/lib/contab/tab.css" rel="stylesheet">
+  <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+  <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+
+
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+        <% include("/inc/leftMenu.html"){} %>
+    </div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+            <% include("/inc/sysHeader.html"){} %>
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading" style="heigth:1000px;">
+            <div class="row content-tabs">
+                <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content">
+                        <a href="javascript:;" class="active J_menuTab" data-id="/jeeplus/a/home">首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown J_tabClose"  data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+                    </button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                        </li>
+                        <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="${ctxPath}/passport/logout" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+            </div>
+            <div class="row J_mainContent" id="content-main" >
+                <iframe scrolling="no" onload="this.height=this.contentWindow.document.documentElement.scrollHeight" class="J_iframe" name="iframe0" width="100%"  src="${ctxPath}/admin/sysUser" frameborder="0" data-id="/jeeplus/a/home" seamless></iframe>
+            </div>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+
+
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <% include("/inc/sysFooter.html"){} %>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/modernizr.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/lib/contab/contabs.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+
+<script>
+    window.onload = function  () {
+        inc.resizeFrame();
+    }
+</script>
+
+</body>
+</html>

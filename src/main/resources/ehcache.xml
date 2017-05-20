@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false">
+    <!-- 缓存存储路径 -->
+    <diskStore path="java.io.tmpdir"/>
+    <!-- 默认缓存 -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="60"
+            overflowToDisk="false"
+            maxElementsOnDisk="0"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="0"
+            memoryStoreEvictionPolicy="LRU"/>
+
+    <!-- 计数器 -->
+    <cache
+            name="counterCache"
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToLiveSeconds="86400"
+            overflowToDisk="false" />
+
+    <!-- 微信token,jsTicket缓存，token/js-ticket在微信服务器上有效期为7200，本地缓存比微信服务器提前1分钟失效 -->
+    <cache
+            name="wechatCache"
+            maxElementsInMemory="10"
+            eternal="false"
+            timeToLiveSeconds="7140"
+            overflowToDisk="false"/>
+
+    <!-- 短信验证码缓存，缓存时间为5分钟 -->
+    <cache
+            name="smsCache"
+            maxElementsInMemory="99999"
+            eternal="false"
+            timeToLiveSeconds="300"
+            overflowToDisk="false"/>
+
+    <!-- 图形验证码缓存，缓存时间为5分钟-->
+    <cache
+            name="graphCache"
+            maxElementsInMemory="99999"
+            eternal="false"
+            timeToLiveSeconds="300"
+            overflowToDisk="false"/>
+
+</ehcache>

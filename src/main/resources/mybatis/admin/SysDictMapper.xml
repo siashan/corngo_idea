@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.admin.mapper.SysDictMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		ID, DICT_GROUP AS dictGroup, DICT_CODE AS dictCode, DICT_NAME AS dictName, DICT_DESP AS dictDesp, ORDER_BY AS orderBy
+	</sql>
+
+</mapper>

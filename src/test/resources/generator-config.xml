@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动 -->
+    <classPathEntry
+    location="C:\\Users\kfc\\.m2\\repository\\com\\oracle\\ojdbc6\\11.2.0\\ojdbc6-11.2.0.jar"/>
+            <!--location="C:\\Users\kfc\\.m2\\repository\\mysql\\mysql-connector-java\\5.1.25\\mysql-connector-java-5.1.25.jar"/>-->
+    <context id="mysql" targetRuntime="MyBatis3">
+        <plugin type="com.corngo.base.generator.plugins.CachePlugin"></plugin>
+        <plugin type="com.corngo.base.generator.plugins.SerializablePlugin"></plugin>
+        <!--数据库为MySQL-->
+        <!--<plugin type="com.webtemp.base.generator.plugins.MySQLFixedPlugin"></plugin>-->
+        <!--<plugin type="com.webtemp.base.generator.plugins.MySQLPagePlugin"></plugin>-->
+        <!--数据库为oracle-->
+        <plugin type="com.corngo.base.generator.plugins.OraclePagePlugin"></plugin>
+        <plugin type="com.corngo.base.generator.plugins.OracleFixedPlugin"></plugin>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/webtemp"-->
+                        <!--userId="root" password="root">-->
+            <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.125:1521:orcl" userId="kingroad" password="kingroad">
+        </jdbcConnection>
+        <javaTypeResolver type="com.corngo.base.generator.plugins.JavaTypeResolverForOracle">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.corngo.map.view" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mybatis.map" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成Mapper的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.corngo.map.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="V_GSROAD_CONGESTION"
+               domainObjectName="VGsroadCongestion"
+               enableCountByExample="true" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="true" selectByExampleQueryId="true">
+        </table>
+    </context>
+</generatorConfiguration>

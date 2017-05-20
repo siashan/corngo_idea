@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 调度支持 -->
+    <bean id="myScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" autowire="no">
+        <property name="triggers">
+            <list>
+                <!--<ref bean="pushLotteryJobTrigger"></ref>-->
+                <!--<ref bean="pushRedJobTrigger"></ref>-->
+                <!--<ref bean="currentInterestJobTrigger"></ref>-->
+                <!--<ref bean="userCreditJobTrigger"></ref>-->
+                <!--<ref bean="msIcCardJobTrigger"></ref>-->
+                <!--<ref bean="redExpireBackJobTrigger"></ref>-->
+                <!--<ref bean="currentWithdrawJobTrigger"/>-->
+                <!--<ref bean="currentFreezePayInJobTrigger"/>-->
+                <!--<ref bean="cancelBidJobTrigger"/>-->
+            </list>
+        </property>
+    </bean>
+
+    <!--<bean id="cancelBidJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="cancelBidJod" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.CancelBidJod"/>-->
+                <!--<property name="description" value="检查是否流标"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 0 */15 * * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="检查是否流标"></property>-->
+    <!--</bean>-->
+    <!--<bean id="currentFreezePayInJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="currentFreezePayInJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.CurrentFreezePayInJob"/>-->
+                <!--<property name="description" value="不在工作日10:00-16:00时百金贷转入百金宝"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 0 10,16 * * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="不在工作日10:00-16:00时百金贷转入百金宝"></property>-->
+    <!--</bean>-->
+    <!--<bean id="pushLotteryJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="pushLotteryJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.mobile.job.PushLotteryJob"/>-->
+                <!--<property name="description" value="每月抽奖机会到期提醒"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 30 10 28 * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每月抽奖机会到期提醒"></property>-->
+    <!--</bean>-->
+    <!--<bean id="pushRedJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="pushRedJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.mobile.job.PushRedJob"/>-->
+                <!--<property name="description" value="每日红包到期提醒"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 20 10 * * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每日红包到期提醒"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="currentInterestJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="currentInterestJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.CurrentInterestJob"/>-->
+                <!--<property name="description" value="每日活期利息计算"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 5 0 ? * *</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每日活期利息计算"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="userCreditJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="userCreditJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.service.TaskService"/>-->
+                <!--<property name="description" value="每日用户授信借款利息更新"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 55 23 ? * *</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每日用户授信借款利息更新"></property>-->
+    <!--</bean>-->
+	<!-- -->
+	<!--<bean id="msIcCardJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="msIcCardJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.CurrentMsIcCardJob"/>-->
+                <!--<property name="description" value="每日银行卡认证状态查询"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 0 0/2 * * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每日银行卡认证状态查询"></property>-->
+    <!--</bean>-->
+    <!-- -->
+	<!--<bean id="currentWithdrawJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="currentWithDrawJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.CurrentWithDrawJob"/>-->
+                <!--<property name="description" value="3分钟百金宝提现秒到状态查询"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 0/3 * * * ?</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="3分钟百金宝提现秒到状态查询"></property>-->
+    <!--</bean>-->
+    <!-- -->
+    <!--<bean id="redExpireBackJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="redExpireBackJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.RedExpireJob"/>-->
+                <!--<property name="description" value="次日退还用户购买红包未使用过期金额"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 6 0 ? * *</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="次日退还用户购买红包未使用过期金额"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="rongTuJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<bean id="redExpireBackJob" class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.baijindai.front.job.RongTuCacheJob"/>-->
+                <!--<property name="description" value="每日一次缓存融途网List参数"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 7 0 ? * *</value>-->
+        <!--</property>-->
+        <!--<property name="description" value="每日一次缓存融途网List参数"></property>-->
+    <!--</bean>-->
+
+</beans>

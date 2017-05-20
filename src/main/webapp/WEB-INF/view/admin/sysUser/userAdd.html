@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'用户管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content" >
+
+        <!-- page heading start-->
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group">
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                            </div>
+                            <form class="form-horizontal" role="form" id="form1">
+                                <input type="hidden" id="id" name="id" value="${sysUser.id!}">
+                                <input type="hidden" name="_token" value="${session._token}">
+
+                                <div class="form-group">
+                                    <label for="userName" class="col-lg-3 col-sm-3 control-label">用户名</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="userName" name="userName"
+                                               value="${sysUser.userName!}"
+                                               placeholder="请填写用户名"
+                                               data-rule="用户名:required"
+                                               data-target="#username-tip">
+
+                                        <p class="help-block" id="username-tip"></p>
+                                    </div>
+                                </div>
+                                <% if (sysUser.id! == null){%>
+                                <div class="form-group">
+                                    <label for="password" class="col-lg-3 col-sm-3 control-label">密码</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               placeholder="请填写6-18位密码"
+                                               data-rule="密码:required;length[6~18]"
+                                               data-target="#password-tip">
+
+                                        <p class="help-block" id="password-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rePwd" class="col-lg-3 col-sm-3 control-label">确认密码</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="password" class="form-control" id="rePwd" name="rePwd"
+                                               data-rule="确认密码:required;match[password]"
+                                               data-target="#rePwd-tip">
+
+                                        <p class="help-block" id="rePwd-tip"></p>
+                                    </div>
+                                </div>
+                                <%}else{%>
+                                <div class="form-group">
+                                    <label for="status" class="col-lg-3 col-sm-3 control-label">状态</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+
+                                        <#select id="status" name ="status" value="${sysUser.status!}" list = "${status}" listKey = "dictCode" listValue="dictName" />
+
+                                    </div>
+                                </div>
+                                <%}%>
+                                <div class="form-group">
+                                    <label for="realName" class="col-lg-3 col-sm-3 control-label">真实姓名</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="realName" name="realName"
+                                               value="${sysUser.realName!}"
+                                               data-rule="真实姓名:required;"
+                                               data-target="#cnname-tip">
+
+                                        <p class="help-block" id="cnname-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNo" class="col-lg-3 col-sm-3 control-label">手机号</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="phoneNo" name="phoneNo"
+                                               value="${sysUser.phoneNo!}"
+                                               data-rule="手机号:required;mobile;"
+                                               data-rule-mobile="[/^(1[34578])\d{9}$/,'请填写正确的手机号']"
+                                               data-target="#mobile-tip">
+
+                                        <p class="help-block" id="mobile-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 col-sm-3 control-label">性别</label>
+
+                                    <div class="col-lg-6 col-sm-9">
+                                        <#dictRadio name="gender" dicts = "${gender}" value="${sysUser.gender!}" valid="gender-tip"/>
+                                        <p class="help-block" id="gender-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 col-sm-3 control-label">角色</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <#checkboxlist name ="roleList" value="${userRoles!}" list="${roleList!}" listKey="id" listValue="name"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-3 col-lg-6 col-sm-12">
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="mySubmit()">保&nbsp;&nbsp; 存
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-2"></div>
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="javascript:window.location='${ctxPath}/admin/sysUser'">返&nbsp;&nbsp;
+                                                回
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.jss"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+<link rel="stylesheet" href="${ctxPath}/resource/lib/validate/jquery.validator.css">
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/jquery.validator.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/local/zh-CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/jquery/jquery.form.js"></script>
+<!--bsgrid-->
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/admin/sysUser/userAdd.js"></script>
+</body>
+</html>

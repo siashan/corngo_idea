@@ -1,0 +1,94 @@
+
+<section>
+    <!--body wrapper start-->
+    <section class="wrapper">
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" id="form1" >
+                            <input type="hidden" id="id" name="id" value="${sysMenu.id!}">
+                            <input type="hidden" id="parentId" name="parentId" value="${parentId!}">
+                            <input type="hidden" name="_token" value="${session._token}">
+                            <div class="form-group">
+                                <label for="name" class="col-lg-2 col-sm-2 control-label">菜单名称</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="name" name="name" value="${sysMenu.name!}"
+                                           placeholder="菜单名称"
+                                           data-rule="菜单名称:required"
+                                           data-target="#name-tip"
+                                            >
+
+                                    <p class="help-block" id="name-tip"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="type" class="col-lg-2 col-sm-2 control-label">菜单类型</label>
+
+                                <div class="col-lg-10">
+                                    <#select id="type" name ="type" value="${sysMenu.type!}"  list = "${menuType}" listKey = "dictCode" listValue="dictName" />
+                                    <p class="help-block" id="type-tip"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="url" class="col-lg-2 col-sm-2 control-label">菜单url</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="url" name="url" value="${sysMenu.url!}"
+                                           placeholder="url"
+                                           data-target="#url-tip">
+
+                                    <p class="help-block" id="url-tip"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="permissions" class="col-lg-2 col-sm-2 control-label">权限</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="permissions" name="permissions" value="${sysMenu.permissions!}"
+                                           placeholder="权限">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="icon" class="col-lg-2 col-sm-2 control-label">图标</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="icon" name="icon" value="${sysMenu.icon!}"
+                                           placeholder="图标 class属性">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderBy" class="col-lg-2 col-sm-2 control-label">排序</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="orderBy" name="orderBy" value="${sysMenu.orderBy!}"
+                                           placeholder="排序">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="mySubmit()">保&nbsp;&nbsp; 存</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- page end-->
+    </section>
+    <!--body wrapper end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<link rel="stylesheet" href="${ctxPath}/resource/lib/validate/jquery.validator.css">
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/jquery.validator.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/local/zh-CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/jquery/jquery.form.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+<script src="${ctxPath}/resource/module/admin/sysMenu/menuAdd.js"></script>
+

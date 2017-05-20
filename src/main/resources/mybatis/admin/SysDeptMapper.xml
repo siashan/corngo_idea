@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.admin.mapper.SysDeptMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		ID, NAME, PARENT_ID AS parentId, REMARK, CREATE_TIME AS createTime, ORDER_BY AS orderBy
+	</sql>
+
+
+	<select id="selectTree" resultType="com.corngo.admin.model.SysDept">
+		select <include refid="Base_Column_List" /> from sys_dept  start with id = 1 connect by PRIOR id = parent_id
+	</select>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.admin.mapper.SysUserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.corngo.admin.model.SysUser">
+		<id column="ID" property="id" />
+		<result column="REAL_NAME" property="realName" />
+		<result column="SALT" property="salt" />
+		<result column="GENDER" property="gender" />
+		<result column="PASSWORD" property="password" />
+		<result column="PHONE_NO" property="phoneNo" />
+		<result column="EMAIL" property="email" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="LAST_LOGIN_DATE" property="lastLoginDate" />
+		<result column="USER_NAME" property="userName" />
+		<result column="WECHAT_NO" property="wechatNo" />
+		<result column="OPEN_ID" property="openId" />
+		<result column="WECHAT_ATTENTION_STATUS" property="wechatAttentionStatus" />
+		<result column="DEPT_ID" property="deptId" />
+		<result column="EXT1" property="ext1" />
+		<result column="EXT2" property="ext2" />
+		<result column="EXT3" property="ext3" />
+		<result column="STATUS" property="status" />
+	</resultMap>
+
+	<!-- 查询用户的所有权限 -->
+	<select id="queryAllPerms" resultType="String">
+		select m.PERMISSIONS from sys_user_role ur
+		LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id
+		LEFT JOIN sys_menu m on rm.menu_id = m.id
+		where ur.user_id = #{id}
+	</select>
+
+</mapper>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'菜单管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/lib/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+    <style>
+        table.bsgrid {
+            width: 98%;
+            margin-right: 5px;
+            border-collapse: collapse;
+        }
+
+        .bsgrid {
+            font-size: 13px;
+            font-family: 微软雅黑, Verdana, sans-serif, 宋体, serif;
+        }
+
+        .bsgrid th, .bsgrid td {
+            border: solid 1px #ccc;
+            background-color: white;
+            color: #333;
+            line-height: 1.8em;
+        }
+
+        .bsgrid tr.selected td {
+            background-color: #e0e0e0 !important;
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 45px;
+            left: 25px;
+            width: 95%;
+            z-index: 1030
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content">
+
+        <!-- header section end-->
+        <!-- page heading start-->
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group fixed-top">
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "新增 " s="sys:menu:add" func = "addMenu()" icon = "fa fa-plus" req = "${request}" />
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "修改 " s="sys:menu:edit" func = "updateMenu()" icon = "fa fa-edit" req = "${request}" />
+                                        <#button id="editable-sample_new" class="btn btn-primary" value = "删除 " s="sys:menu:del" func = "delMenu()" icon = "fa fa-trash-o" req = "${request}" />
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                                <table id="dt" class="bsgrid">
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>URL / JS方法</th>
+                                        <th>权限</th>
+                                        <th>排序</th>
+                                        <th>ID</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tb">
+                                    <%for(item in treedata){%>
+                                    <tr class="treegrid-${item.id} treegrid-parent-${item.parentId!}" id="row${item.id}" data-name="${item.name}" data-id="${item.id}">
+                                        <td>
+                                            ${item.name}
+                                        </td>
+                                        <td>
+                                            ${item.type! == '0' ? "<label class='label radius label-primary'>根目录</label>"}
+                                            ${item.type! == '1' ? "<label class='label radius label-success'>一级菜单</label>"}
+                                            ${item.type! == '2' ? "<label class='label radius label-info'>二级菜单</label>"}
+                                            ${item.type! == '3' ? "<label class='label radius label-warning'>按钮</label>"}
+                                            ${item.type! == '4' ? "<label class='label radius label-danger'>链接</label>"}
+                                        </td>
+                                        <td>${item.url!}</td>
+                                        <td>${item.permissions!}</td>
+                                        <td>${item.orderBy!}</td>
+                                        <td>${item.id!}</td>
+                                    </tr>
+                                    <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.js"></script>
+
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+
+<script src="${ctxPath}/resource/lib/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/admin/sysMenu/menuList.js"></script>
+<script>
+    window.onload = function  () {
+        inc.resizeFrame();
+    }
+</script>
+</body>
+</html>

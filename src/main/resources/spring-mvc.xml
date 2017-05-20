@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+		    http://www.springframework.org/schema/beans
+		    http://www.springframework.org/schema/beans/spring-beans.xsd
+		    http://www.springframework.org/schema/context
+		    http://www.springframework.org/schema/context/spring-context.xsd
+		    http://www.springframework.org/schema/mvc
+		    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 扫描controller（controller层注入） -->
+    <!-- Controller包(自动注入) -->
+    <!--<context:component-scan base-package="com.han.jeetemp.*.controller"/>-->
+    <context:component-scan base-package="com.corngo" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <mvc:annotation-driven validator="validator">
+        <!-- 注册fastjson为默认JSON实现 -->
+        <mvc:message-converters register-defaults="true">
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes" value="application/json"/>
+            </bean>
+        </mvc:message-converters>
+
+        <!-- 注册session获取为注解获取 -->
+        <!--<mvc:argument-resolvers>-->
+            <!--<bean class="com.baijindai.base.support.argumentResolver.SessionScopeMethod"/>-->
+        <!--</mvc:argument-resolvers>-->
+    </mvc:annotation-driven>
+
+    <!-- 静态资源映射 -->
+    <mvc:resources mapping="/resource/**" location="/resource/"/>
+
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <!--防表单重复提交拦截器-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/resource/**"/>
+            <bean class="com.corngo.base.support.interceptor.TokenInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/resource/**"/>
+            <bean class="com.corngo.base.support.interceptor.TokenInterceptor"/>
+        </mvc:interceptor>
+        <!--后台操作拦截器-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/admin/**"/>-->
+            <!--&lt;!&ndash;<mvc:exclude-mapping path="/resource/**"/>&ndash;&gt;-->
+            <!--<bean class="com.webtemp.base.support.interceptor.AdminInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/admin/**"/>-->
+            <!--<mvc:mapping path="/sys/**"/>-->
+            <!--<bean class="com.webtemp.base.support.interceptor.AdminInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    </mvc:interceptors>
+
+    <!-- 文件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为2MB -->
+        <property name="maxUploadSize">
+            <value>20971520</value>
+        </property>
+    </bean>
+
+    <!-- JSR303 bean验证组件 -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:org/hibernate/validator/ValidationMessages</value>
+            </list>
+        </property>
+        <property name="useCodeAsDefaultMessage" value="false"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="cacheSeconds" value="60"/>
+    </bean>
+
+    <!-- beetl view config -->
+    <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init"/>
+
+    <bean id="viewResolver" class="org.beetl.ext.spring.BeetlSpringViewResolver">
+        <property name="contentType" value="text/html;charset=UTF-8"></property>
+        <property name="prefix" value="/WEB-INF/view/"></property>
+        <property name="suffix" value=".html"></property>
+    </bean>
+
+    <bean id="appStart" class="com.corngo.base.support.AppStart" init-method="onStart" destroy-method="onStop">
+        <property name="beetlConfig" ref="beetlConfig"/>
+        <property name="sysDictServiceImpl" ref="sysDictServiceImpl"/>
+    </bean>
+
+    <!--AOP自动代理-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+</beans>

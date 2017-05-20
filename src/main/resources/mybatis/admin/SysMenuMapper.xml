@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.admin.mapper.SysMenuMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.corngo.admin.model.SysMenu">
+		<result column="NAME" property="name" />
+		<result column="TYPE" property="type" />
+		<result column="URL" property="url" />
+		<result column="ICON" property="icon" />
+		<result column="PERMISSIONS" property="permissions" />
+		<result column="PARENT_ID" property="parentId" />
+		<result column="REMARK" property="remark" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="ORDER_BY" property="orderBy" />
+	</resultMap>
+
+	<select id="selectTree" resultType="com.corngo.admin.model.SysMenu">
+		select id,name,type,url,icon,permissions,parent_id as parentId,remark,create_time as createTime,order_by as orderBy
+		from sys_menu start with id=1 connect by prior id=parent_id order siblings by order_by asc
+	</select>
+
+	<select id="getUserFatherMenuList" resultType="com.corngo.admin.model.SysMenu">
+		select sm.id as id,sm.url as url,sm.name as name,sm.icon as icon,sm.parent_id as parentId ,sm.type as type from sys_menu sm
+		where id in (
+		select distinct m.id as id
+		from sys_user_role ur
+		LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id
+		LEFT JOIN sys_menu m on rm.menu_id = m.id
+		where ur.user_id = #{id} and m.type in ('1','2')
+		)
+		start with sm.id=1 connect by prior sm.id=sm.parent_id order siblings by sm.order_by asc
+
+	</select>
+
+</mapper>
