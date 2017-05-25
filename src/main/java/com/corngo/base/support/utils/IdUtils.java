@@ -17,28 +17,37 @@ public class IdUtils {
 
     /**
      * oracle序列
+     *
      * @param clazz entity
      * @return long
      */
     public static long oracle(Class<?> clazz) {
         JdbcTemplate jdbcTemplate = (JdbcTemplate) SpringContextHolder.getBean("jdbcTemplate");
-        String tableName = clazz.getAnnotation(TableName.class).value().toUpperCase();
+        TableName annotation = clazz.getAnnotation(TableName.class);
+        String tableName;
+        if (null != annotation) {
+            tableName = annotation.value().toUpperCase();
+        } else {
+            tableName = clazz.getSimpleName();
+        }
         return jdbcTemplate.queryForObject("SELECT  SEQ_" + tableName + ".nextval FROM  DUAL", Long.class);
     }
 
     /**
      * 分布式id
+     *
      * @return long
      */
-    public static long sequence(){
+    public static long sequence() {
         return sequence.nextId();
     }
 
     /**
      * 分布式id
+     *
      * @return str
      */
-    public static String sequenceString(){
-        return sequence()+"";
+    public static String sequenceString() {
+        return sequence() + "";
     }
 }
