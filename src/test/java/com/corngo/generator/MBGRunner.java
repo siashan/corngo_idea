@@ -1,6 +1,6 @@
 package com.corngo.generator;
 
-import com.eletaxi.base.generator.plugins.BJDGenerator;
+import com.corngo.generator.plugins.BJDGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.exception.InvalidConfigurationException;

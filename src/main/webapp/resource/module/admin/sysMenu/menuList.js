@@ -23,10 +23,10 @@
  */
 function addMenu() {
     if (selected == -1) {
-        layer.alert("没有选中任何记录");
+        window.parent.layer.alert("没有选中任何记录");
     } else {
         $.post(inc.ctx + '/admin/sysMenu/toMenuAdd', {parentId:selected}, function (str) {
-            layer.open({
+            window.parent.layer.open({
                 title: '新增菜单',
                 type: 1,
                 offset: 'auto',
@@ -43,10 +43,10 @@ function addMenu() {
      */
     function updateMenu() {
         if (selected == -1) {
-            layer.alert("没有选中任何记录");
+            window.parent.layer.alert("没有选中任何记录");
         } else {
             $.post(inc.ctx + '/admin/sysMenu/toMenuUpdate/'+selected, function (str) {
-                layer.open({
+                window.parent.layer.open({
                     title: '修改菜单',
                     type: 1,
                     offset: 'auto',
@@ -63,22 +63,22 @@ function addMenu() {
      */
     function delMenu() {
         if (selected == -1) {
-            layer.alert("没有选中任何记录");
+            window.parent.layer.alert("没有选中任何记录");
         } else {
-            layer.confirm('您确定要删除该记录吗？', {
+            window.parent.layer.confirm('您确定要删除该记录吗？', {
                 btn: ['确定', '算了'] //按钮
             }, function () {
                 var url = inc.ctx + "/admin/sysMenu/delMenu/"+ selected;
                 $.post(url, {}, function (data) {
                     if(data.code == '200'){
-                        layer.msg(data.msg,{icon:1});
+                        window.parent.layer.msg(data.msg,{icon:1});
                     }else{
-                        layer.msg(data.msg,{icon:2});
+                        window.parent.layer.msg(data.msg,{icon:2});
                     }
                     window.location.href = inc.ctx + "/admin/sysMenu?leftMenu=21";
                 });
             }, function (index) {
-                layer.closeAll();
+                window.parent.layer.closeAll();
             });
         }
     }

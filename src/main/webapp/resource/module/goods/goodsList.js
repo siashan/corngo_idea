@@ -2,7 +2,7 @@ var gridObj;
 
 $(function () {
     gridObj = $.fn.bsgrid.init('searchTable', {
-        url: inc.ctx + '/admin/sysDict/json',
+        url: inc.ctx + '/corn/goods/json',
         pageSizeSelect: true,
         stripeRows: true,
         displayBlankRows: false,
