@@ -82,59 +82,12 @@ public class PUBConstants {
     public static final String JOB_USER_EXCEL_IMPORT_TRIGGER_PREFIX_ = "JOB_USER_EXCEL_IMPORT_TRIGGER_PREFIX_";
 
     /**
-     * 用户任务状态
+     * 商品状态
      */
-    public static class UserSchedulStatus {
-        public static final String ST_INIT = "INIT";
-        public static final String ST_FINISH = "FINISH";
-        public static final String COLOR = "yellow";
-        public static final String TEXT_COLOR = "black";
+    public static class GoodsStatus {
+        public static final String INIT = "1";          //    初始化
+        public static final String PUBLISHED = "2";   //    已发布
+        public static final String COLOSED = "3";    //   已下架
     }
-
-    /**
-     * 订单状态
-     */
-    public static class OrderInfoStatus {
-        public static final int ST_INIT = 0;   //  待接单
-        public static final int ST_INORDER = 1;   //  已接单/待出发
-        public static final int ST_ON_THE_WAY = 2;   //  已出发
-        public static final int ST_DONE = 3;   //  已结束
-        public static final int ST_CANCEL = 4;   //  已取消
-    }
-
-    /**
-     * 订单支付状态
-     */
-    public static class OrderPayStatus {
-        public static final int INIT = 0;   //  待支付
-        public static final int PAYING = 1;   //  支付中
-        public static final int FAIL = 2;   //  支付失败
-        public static final int SUCCESS = 3;   //  已支付
-        public static final int ST_CANCEL = 4;   //  已取消
-    }
-
-    /**
-     * 验证码状态
-     */
-    public static class VerfifyCodeStatus{
-
-        public static final int ST_YES = 1;  // 无效
-        public static final int ST_NO = 0; // 有效
-
-
-    }
-
-    /**
-     * 司机状态
-     *
-     */
-    public static class DriverStatus{
-        public static final int WAIT_AUDIT = 1;  // 待审核
-        public static final int AUDITING = 2;  // 审核中
-        public static final int AUDIT_REJECT = 3;  // 审核拒绝
-        public static final int AUDIT_SUCCESS  = 4;  // 审核通过
-
-    }
-
 
 }

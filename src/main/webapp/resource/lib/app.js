@@ -58,3 +58,17 @@ inc.getActiveFrame = function(){
         }
     }
 }
+
+
+/**
+ * 初始化上传组件
+ * @param obj
+ */
+inc.initUpload = function (obj, formid, fileid, name, url, callback) {
+
+    var htmstr = [];
+    htmstr.push("<form id='" + formid + "' action='" + inc.fs + "' method='post' enctype='multipart/form-data' >");
+    htmstr.push("<input size = \"1\" type=\"file\" name=\"" + name + "\"  id=\"" + fileid + "\" class=\"inputstyle\" onchange=\"change();\"/>");
+    htmstr.push("</form>");
+    obj.after(htmstr.join(""));
+};

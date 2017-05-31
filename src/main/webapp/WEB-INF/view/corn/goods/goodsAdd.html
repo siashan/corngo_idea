@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'商品管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+    <style>
+        .txxg dd {
+            font-size: 12px;
+            font-family: "宋体";
+            color: #656565;
+            margin-top: 20px;
+        }
+        .div1{
+
+            height: 41px;
+
+            width: 144px;
+            position:relative;
+        }
+        .div2{
+            text-align:center;
+            padding-top:12px;
+            font-size:15px;
+            font-weight:800
+        }
+        .inputstyle{
+            width: 144px;
+            height: 41px;
+            cursor: pointer;
+            font-size: 30px;
+            outline: medium none;
+            position: absolute;
+            filter:alpha(opacity=0);
+            -moz-opacity:0;
+            opacity:0;
+            left:0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content" >
+
+        <!-- page heading start-->
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group">
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                            </div>
+                            <form class="form-horizontal" role="form" id="form1">
+                                <input type="hidden" id="id" name="id" value="${goods.id!}">
+                                <input type="hidden" name="_token" value="${session._token}">
+
+                                <div class="form-group">
+                                    <label for="name" class="col-lg-3 col-sm-3 control-label">商品名称</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                               value="${goods.name!}"
+                                               placeholder="请填写商品名称"
+                                               data-rule="商品名称:required"
+                                               data-target="#name-tip">
+
+                                        <p class="help-block" id="name-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price" class="col-lg-3 col-sm-3 control-label">价格</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="text" class="form-control" id="price" name="price"
+                                               value="${goods.price!}"
+                                               data-rule="价格:required;"
+                                               data-target="#price-tip">
+
+                                        <p class="help-block" id="price-tip"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type" class="col-lg-3 col-sm-3 control-label">类型</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <#select id="type" name ="type" value="${goods.type!}" list = "${goodsType}" listKey = "dictCode" listValue="dictName" />
+                                    </div>
+                                </div>
+                                <%if(goods.id! != null){%>
+                                <div class="form-group">
+                                    <label for="status" class="col-lg-3 col-sm-3 control-label">状态</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <#select id="status" name ="status" value="${goods.status!}" list = "${goodsStatus}" listKey = "dictCode" listValue="dictName" />
+                                    </div>
+                                </div>
+                                <%}%>
+                                <div class="form-group">
+                                    <label for="type" class="col-lg-3 col-sm-3 control-label">上传照片</label>
+
+                                    <div class="col-lg-4 col-sm-9">
+                                        <input type="hidden" name="imgUrl" id="imgUrl" />
+                                        <dl>
+                                            <%if(goods.imgUrl! == null){%>
+                                            <img id="image" src="${ctxPath}/resource/images/zw.png" width="180px" height="220px" style="border-radius: 7px">
+                                            <%}else{%>
+                                            <img id="image" src="${ctxPath}/fs/service/showImg?imgUrl=${goods.imgUrl}" width="180px" height="220px" style="border-radius: 7px">
+                                            <%}%>
+                                            <dt></dt>
+                                            <dd>
+                                                <div class="div1">
+                                                    <div class="div2">[上传图片一]</div>
+                                                    <span id="imgUpLoad"></span>
+                                                </div>
+                                                <!--<a href="#">[上传头像]</a>-->
+
+
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-offset-3 col-lg-6 col-sm-12">
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="mySubmit()">保&nbsp;&nbsp; 存
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-2"></div>
+                                        <div class="col-lg-3 col-sm-5">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                    onclick="javascript:window.location='${ctxPath}/corn/goods'">返&nbsp;&nbsp;
+                                                回
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.jss"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+<link rel="stylesheet" href="${ctxPath}/resource/lib/validate/jquery.validator.css">
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/jquery.validator.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/validate/local/zh-CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="${ctxPath}/resource/lib/jquery/ajaxfileupload.js"></script>
+<!--bsgrid-->
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/corn/goods/goodsAdd.js"></script>
+</body>
+</html>

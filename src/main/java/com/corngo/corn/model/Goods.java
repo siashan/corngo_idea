@@ -1,9 +1,13 @@
 package com.corngo.corn.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONType;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import java.util.Date;
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.corngo.base.support.PUBConstants;
+
 import java.io.Serializable;
 
 /**
@@ -12,8 +16,9 @@ import java.io.Serializable;
  * </p>
  *
  * @author hanfc
- * @since 2017-05-19
+ * @since 2017-05-26
  */
+@JSONType(ignores = "")
 public class Goods extends Model<Goods> {
 
     private static final long serialVersionUID = 1L;
@@ -31,6 +36,7 @@ public class Goods extends Model<Goods> {
     /**
      * 创建时间
      */
+	@JSONField(format = PUBConstants.DEFAULT_FORMAT_DATE_JDK)
 	@TableField("CREATE_TIME")
 	private Date createTime;
     /**
@@ -49,11 +55,6 @@ public class Goods extends Model<Goods> {
 	@TableField("TYPE")
 	private String type;
     /**
-     * 期号
-     */
-	@TableField("VOLUME")
-	private String volume;
-    /**
      * 状态
      */
 	@TableField("STATUS")
@@ -63,26 +64,6 @@ public class Goods extends Model<Goods> {
      */
 	@TableField("IMG_URL")
 	private String imgUrl;
-    /**
-     * 商品详情id
-     */
-	@TableField("GOODS_DETAIL_ID")
-	private Long goodsDetailId;
-    /**
-     * 有效时间
-     */
-	@TableField("ACTIVE_TIME")
-	private String activeTime;
-    /**
-     * 开始时间
-     */
-	@TableField("START_TIME")
-	private Date startTime;
-    /**
-     * 结束时间
-     */
-	@TableField("END_TIME")
-	private Date endTime;
 
 
 	public Long getId() {
@@ -133,14 +114,6 @@ public class Goods extends Model<Goods> {
 		this.type = type;
 	}
 
-	public String getVolume() {
-		return volume;
-	}
-
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -155,38 +128,6 @@ public class Goods extends Model<Goods> {
 
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
-	}
-
-	public Long getGoodsDetailId() {
-		return goodsDetailId;
-	}
-
-	public void setGoodsDetailId(Long goodsDetailId) {
-		this.goodsDetailId = goodsDetailId;
-	}
-
-	public String getActiveTime() {
-		return activeTime;
-	}
-
-	public void setActiveTime(String activeTime) {
-		this.activeTime = activeTime;
-	}
-
-	public Date getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
-	}
-
-	public Date getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
 	}
 
 	@Override

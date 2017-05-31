@@ -22,36 +22,20 @@ $(function () {
 });
 
 /**
- * 新增数据字典
+ * 新增商品
  */
-function addDict() {
-    $.post(inc.ctx + '/admin/sysDict/toDictAdd', {}, function (str) {
-       window.parent.layer.open({
-            title: '新增数据字典',
-            type: 1,
-            offset: 'auto',
-            shift: 2,
-            area: '550px',
-            content: str
-        })
-    });
+function addGoods(){
+    var url = inc.ctx + "/corn/goods/toAdd";
+    window.location.href = url;
 }
 
 /**
- * 修改数据字典
+ * 修改
  */
-function updateDict() {
+function editGoods() {
     if (inc.checkSelected(gridObj)) {
-        $.post(inc.ctx + '/admin/sysDict/toDictUpdate/' + inc.getSelectedRowDate(gridObj, "id"),{} , function (str) {
-            window.parent.layer.open({
-                title: '修改数据字典',
-                type: 1,
-                offset: 'auto',
-                shift: 2,
-                area: '550px',
-                content: str
-            })
-        });
+        var url = inc.ctx + '/corn/goods/toEdit/' + inc.getSelectedRowDate(gridObj, "id");
+        window.location.href = url;
     }else{
         window.parent.layer.alert("没有选中任何记录!");
     }
@@ -59,14 +43,14 @@ function updateDict() {
 
 
 /**
- * 删除数据字典
+ * 删除
  */
-function delDict() {
+function delGoods() {
     if (inc.checkSelected(gridObj)) {
         window.parent.layer.confirm('您确定要删除该记录吗？', {
             btn: ['确定', '算了'] //按钮
         }, function () {
-            var url = inc.ctx + "/admin/sysDict/delDict/"+ inc.getSelectedRowDate(gridObj,"id");
+            var url = inc.ctx + "/corn/goods/delGoods/"+ inc.getSelectedRowDate(gridObj,"id");
             $.post(url, {}, function (data) {
                 if(data.code == '200'){
                     window.parent.layer.msg(data.msg,{icon:1});
@@ -81,6 +65,11 @@ function delDict() {
     }else{
         window.parent.layer.alert("没有选中任何记录!");
     }
+}
+
+function getStatus(record, rowIndex, colIndex, options){
+    var my = gridObj.getRecordIndexValue(record, 'status');
+    return eval('goodsStatus.d_' + my);
 }
 
 
