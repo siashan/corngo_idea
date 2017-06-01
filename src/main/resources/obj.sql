@@ -1,4 +1,4 @@
-------------------------------------------
+ï»¿------------------------------------------
 -- Export file for user CORNGO          --
 -- Created by KR on 2017/5/31, 17:08:41 --
 ------------------------------------------
@@ -23,23 +23,23 @@ create table GOODS
 )
 ;
 comment on table GOODS
-  is 'ÉÌÆ·±í';
+  is 'å•†å“è¡¨';
 comment on column GOODS.id
   is 'ID';
 comment on column GOODS.name
-  is 'ÉÌÆ·Ãû³Æ';
+  is 'å•†å“åç§°';
 comment on column GOODS.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column GOODS.user_id
-  is '·¢²¼ÈË';
+  is 'å‘å¸ƒäºº';
 comment on column GOODS.price
-  is '¼Û¸ñ';
+  is 'ä»·æ ¼';
 comment on column GOODS.type
-  is 'ÀàĞÍ';
+  is 'ç±»å‹';
 comment on column GOODS.status
-  is '×´Ì¬';
+  is 'çŠ¶æ€';
 comment on column GOODS.img_url
-  is 'Í¼Æ¬´æ·ÅµØÖ·';
+  is 'å›¾ç‰‡å­˜æ”¾åœ°å€';
 alter table GOODS
   add constraint PK_GOODS_ID primary key (ID);
 
@@ -60,15 +60,15 @@ create table SYS_DEPT
 comment on column SYS_DEPT.id
   is 'id';
 comment on column SYS_DEPT.name
-  is '×éÖ¯»ú¹¹Ãû³Æ';
+  is 'ç»„ç»‡æœºæ„åç§°';
 comment on column SYS_DEPT.parent_id
-  is '¸¸id';
+  is 'çˆ¶id';
 comment on column SYS_DEPT.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 comment on column SYS_DEPT.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_DEPT.order_by
-  is 'ÅÅĞò×Ö¶Î';
+  is 'æ’åºå­—æ®µ';
 alter table SYS_DEPT
   add constraint PK_SYS_DEPT_ID primary key (ID);
 
@@ -89,15 +89,15 @@ create table SYS_DICT
 comment on column SYS_DICT.id
   is 'id';
 comment on column SYS_DICT.dict_group
-  is '×é±ğ';
+  is 'ç»„åˆ«';
 comment on column SYS_DICT.dict_code
-  is 'codeÖµ';
+  is 'codeå€¼';
 comment on column SYS_DICT.dict_name
-  is 'Ãû³Æ';
+  is 'åç§°';
 comment on column SYS_DICT.dict_desp
-  is 'ÃèÊö';
+  is 'æè¿°';
 comment on column SYS_DICT.order_by
-  is 'ÅÅĞò';
+  is 'æ’åº';
 alter table SYS_DICT
   add constraint PK_SYS_DICT_ID primary key (ID);
 
@@ -122,23 +122,23 @@ create table SYS_MENU
 comment on column SYS_MENU.id
   is 'id';
 comment on column SYS_MENU.name
-  is '²Ëµ¥Ãû³Æ';
+  is 'èœå•åç§°';
 comment on column SYS_MENU.type
-  is '²Ëµ¥ÀàĞÍ';
+  is 'èœå•ç±»å‹';
 comment on column SYS_MENU.url
-  is '²Ëµ¥url';
+  is 'èœå•url';
 comment on column SYS_MENU.icon
-  is 'Í¼±ê';
+  is 'å›¾æ ‡';
 comment on column SYS_MENU.permissions
-  is 'È¨ÏŞ';
+  is 'æƒé™';
 comment on column SYS_MENU.parent_id
-  is '¸¸id';
+  is 'çˆ¶id';
 comment on column SYS_MENU.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 comment on column SYS_MENU.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_MENU.order_by
-  is 'ÅÅĞò×Ö¶Î';
+  is 'æ’åºå­—æ®µ';
 alter table SYS_MENU
   add constraint PK_SYS_MENU_ID primary key (ID);
 
@@ -155,13 +155,13 @@ create table SYS_ROLE
 )
 ;
 comment on column SYS_ROLE.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_ROLE.name
-  is '½ÇÉ«Ãû³Æ';
+  is 'è§’è‰²åç§°';
 comment on column SYS_ROLE.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_ROLE.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 alter table SYS_ROLE
   add constraint SYS_ROLE_ID primary key (ID);
 
@@ -177,11 +177,11 @@ create table SYS_ROLE_MENU
 )
 ;
 comment on column SYS_ROLE_MENU.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_ROLE_MENU.role_id
-  is '½ÇÉ«id';
+  is 'è§’è‰²id';
 comment on column SYS_ROLE_MENU.menu_id
-  is '²Ëµ¥id';
+  is 'èœå•id';
 alter table SYS_ROLE_MENU
   add constraint SYS_ROLE_MENU_ID primary key (ID);
 
@@ -212,33 +212,33 @@ create table SYS_USER
 )
 ;
 comment on column SYS_USER.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_USER.real_name
-  is 'ÕæÊµĞÕÃû';
+  is 'çœŸå®å§“å';
 comment on column SYS_USER.salt
-  is '¼ÓÃÜÑÎ';
+  is 'åŠ å¯†ç›';
 comment on column SYS_USER.gender
-  is 'ĞÔ±ğ';
+  is 'æ€§åˆ«';
 comment on column SYS_USER.password
-  is 'µÇÂ¼ÃÜÂë';
+  is 'ç™»å½•å¯†ç ';
 comment on column SYS_USER.phone_no
-  is 'ÁªÏµµç»°';
+  is 'è”ç³»ç”µè¯';
 comment on column SYS_USER.email
-  is 'ÓÊÏä';
+  is 'é‚®ç®±';
 comment on column SYS_USER.create_time
-  is '´´½¨ÈÕÆÚ';
+  is 'åˆ›å»ºæ—¥æœŸ';
 comment on column SYS_USER.last_login_date
-  is '×î½üµÇÂ¼Ê±¼ä';
+  is 'æœ€è¿‘ç™»å½•æ—¶é—´';
 comment on column SYS_USER.user_name
-  is 'ÓÃ»§Ãû';
+  is 'ç”¨æˆ·å';
 comment on column SYS_USER.wechat_no
-  is 'Î¢ĞÅºÅ';
+  is 'å¾®ä¿¡å·';
 comment on column SYS_USER.open_id
   is 'openID';
 comment on column SYS_USER.wechat_attention_status
-  is 'Î¢ĞÅ¹Ø×¢×´Ì¬';
+  is 'å¾®ä¿¡å…³æ³¨çŠ¶æ€';
 comment on column SYS_USER.dept_id
-  is 'ËùÊô²¿ÃÅid';
+  is 'æ‰€å±éƒ¨é—¨id';
 alter table SYS_USER
   add constraint ID primary key (ID);
 
@@ -254,11 +254,11 @@ create table SYS_USER_ROLE
 )
 ;
 comment on column SYS_USER_ROLE.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_USER_ROLE.role_id
-  is '½ÇÉ«id';
+  is 'è§’è‰²id';
 comment on column SYS_USER_ROLE.user_id
-  is 'ÓÃ»§id';
+  is 'ç”¨æˆ·id';
 alter table SYS_USER_ROLE
   add constraint SYS_USER_ROLE_ID primary key (ID);
 

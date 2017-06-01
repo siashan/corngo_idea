@@ -1,5 +1,5 @@
-prompt PL/SQL Developer import file
-prompt Created on 2017Äê5ÔÂ31ÈÕ by KR
+ï»¿prompt PL/SQL Developer import file
+prompt Created on 2017å¹´5æœˆ31æ—¥ by KR
 set feedback off
 set define off
 prompt Dropping GOODS...
@@ -32,23 +32,23 @@ create table GOODS
 )
 ;
 comment on table GOODS
-  is 'ÉÌÆ·±í';
+  is 'å•†å“è¡¨';
 comment on column GOODS.id
   is 'ID';
 comment on column GOODS.name
-  is 'ÉÌÆ·Ãû³Æ';
+  is 'å•†å“åç§°';
 comment on column GOODS.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column GOODS.user_id
-  is '·¢²¼ÈË';
+  is 'å‘å¸ƒäºº';
 comment on column GOODS.price
-  is '¼Û¸ñ';
+  is 'ä»·æ ¼';
 comment on column GOODS.type
-  is 'ÀàĞÍ';
+  is 'ç±»å‹';
 comment on column GOODS.status
-  is '×´Ì¬';
+  is 'çŠ¶æ€';
 comment on column GOODS.img_url
-  is 'Í¼Æ¬´æ·ÅµØÖ·';
+  is 'å›¾ç‰‡å­˜æ”¾åœ°å€';
 alter table GOODS
   add constraint PK_GOODS_ID primary key (ID);
 
@@ -66,15 +66,15 @@ create table SYS_DEPT
 comment on column SYS_DEPT.id
   is 'id';
 comment on column SYS_DEPT.name
-  is '×éÖ¯»ú¹¹Ãû³Æ';
+  is 'ç»„ç»‡æœºæ„åç§°';
 comment on column SYS_DEPT.parent_id
-  is '¸¸id';
+  is 'çˆ¶id';
 comment on column SYS_DEPT.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 comment on column SYS_DEPT.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_DEPT.order_by
-  is 'ÅÅĞò×Ö¶Î';
+  is 'æ’åºå­—æ®µ';
 alter table SYS_DEPT
   add constraint PK_SYS_DEPT_ID primary key (ID);
 
@@ -92,15 +92,15 @@ create table SYS_DICT
 comment on column SYS_DICT.id
   is 'id';
 comment on column SYS_DICT.dict_group
-  is '×é±ğ';
+  is 'ç»„åˆ«';
 comment on column SYS_DICT.dict_code
-  is 'codeÖµ';
+  is 'codeå€¼';
 comment on column SYS_DICT.dict_name
-  is 'Ãû³Æ';
+  is 'åç§°';
 comment on column SYS_DICT.dict_desp
-  is 'ÃèÊö';
+  is 'æè¿°';
 comment on column SYS_DICT.order_by
-  is 'ÅÅĞò';
+  is 'æ’åº';
 alter table SYS_DICT
   add constraint PK_SYS_DICT_ID primary key (ID);
 
@@ -122,23 +122,23 @@ create table SYS_MENU
 comment on column SYS_MENU.id
   is 'id';
 comment on column SYS_MENU.name
-  is '²Ëµ¥Ãû³Æ';
+  is 'èœå•åç§°';
 comment on column SYS_MENU.type
-  is '²Ëµ¥ÀàĞÍ';
+  is 'èœå•ç±»å‹';
 comment on column SYS_MENU.url
-  is '²Ëµ¥url';
+  is 'èœå•url';
 comment on column SYS_MENU.icon
-  is 'Í¼±ê';
+  is 'å›¾æ ‡';
 comment on column SYS_MENU.permissions
-  is 'È¨ÏŞ';
+  is 'æƒé™';
 comment on column SYS_MENU.parent_id
-  is '¸¸id';
+  is 'çˆ¶id';
 comment on column SYS_MENU.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 comment on column SYS_MENU.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_MENU.order_by
-  is 'ÅÅĞò×Ö¶Î';
+  is 'æ’åºå­—æ®µ';
 alter table SYS_MENU
   add constraint PK_SYS_MENU_ID primary key (ID);
 
@@ -152,13 +152,13 @@ create table SYS_ROLE
 )
 ;
 comment on column SYS_ROLE.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_ROLE.name
-  is '½ÇÉ«Ãû³Æ';
+  is 'è§’è‰²åç§°';
 comment on column SYS_ROLE.create_time
-  is '´´½¨Ê±¼ä';
+  is 'åˆ›å»ºæ—¶é—´';
 comment on column SYS_ROLE.remark
-  is '±¸×¢';
+  is 'å¤‡æ³¨';
 alter table SYS_ROLE
   add constraint SYS_ROLE_ID primary key (ID);
 
@@ -171,11 +171,11 @@ create table SYS_ROLE_MENU
 )
 ;
 comment on column SYS_ROLE_MENU.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_ROLE_MENU.role_id
-  is '½ÇÉ«id';
+  is 'è§’è‰²id';
 comment on column SYS_ROLE_MENU.menu_id
-  is '²Ëµ¥id';
+  is 'èœå•id';
 alter table SYS_ROLE_MENU
   add constraint SYS_ROLE_MENU_ID primary key (ID);
 
@@ -203,33 +203,33 @@ create table SYS_USER
 )
 ;
 comment on column SYS_USER.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_USER.real_name
-  is 'ÕæÊµĞÕÃû';
+  is 'çœŸå®å§“å';
 comment on column SYS_USER.salt
-  is '¼ÓÃÜÑÎ';
+  is 'åŠ å¯†ç›';
 comment on column SYS_USER.gender
-  is 'ĞÔ±ğ';
+  is 'æ€§åˆ«';
 comment on column SYS_USER.password
-  is 'µÇÂ¼ÃÜÂë';
+  is 'ç™»å½•å¯†ç ';
 comment on column SYS_USER.phone_no
-  is 'ÁªÏµµç»°';
+  is 'è”ç³»ç”µè¯';
 comment on column SYS_USER.email
-  is 'ÓÊÏä';
+  is 'é‚®ç®±';
 comment on column SYS_USER.create_time
-  is '´´½¨ÈÕÆÚ';
+  is 'åˆ›å»ºæ—¥æœŸ';
 comment on column SYS_USER.last_login_date
-  is '×î½üµÇÂ¼Ê±¼ä';
+  is 'æœ€è¿‘ç™»å½•æ—¶é—´';
 comment on column SYS_USER.user_name
-  is 'ÓÃ»§Ãû';
+  is 'ç”¨æˆ·å';
 comment on column SYS_USER.wechat_no
-  is 'Î¢ĞÅºÅ';
+  is 'å¾®ä¿¡å·';
 comment on column SYS_USER.open_id
   is 'openID';
 comment on column SYS_USER.wechat_attention_status
-  is 'Î¢ĞÅ¹Ø×¢×´Ì¬';
+  is 'å¾®ä¿¡å…³æ³¨çŠ¶æ€';
 comment on column SYS_USER.dept_id
-  is 'ËùÊô²¿ÃÅid';
+  is 'æ‰€å±éƒ¨é—¨id';
 alter table SYS_USER
   add constraint ID primary key (ID);
 
@@ -242,11 +242,11 @@ create table SYS_USER_ROLE
 )
 ;
 comment on column SYS_USER_ROLE.id
-  is 'Ö÷¼ü ×ÔÔö';
+  is 'ä¸»é”® è‡ªå¢';
 comment on column SYS_USER_ROLE.role_id
-  is '½ÇÉ«id';
+  is 'è§’è‰²id';
 comment on column SYS_USER_ROLE.user_id
-  is 'ÓÃ»§id';
+  is 'ç”¨æˆ·id';
 alter table SYS_USER_ROLE
   add constraint SYS_USER_ROLE_ID primary key (ID);
 
@@ -273,116 +273,116 @@ commit;
 prompt 1 records loaded
 prompt Loading SYS_DEPT...
 insert into SYS_DEPT (id, name, parent_id, remark, create_time, order_by)
-values (1, '¸ßËÙ¹«Â·ÁªÍø¹«Ë¾', null, null, null, 1);
+values (1, 'é«˜é€Ÿå…¬è·¯è”ç½‘å…¬å¸', null, null, null, 1);
 insert into SYS_DEPT (id, name, parent_id, remark, create_time, order_by)
-values (19, 'ÈËÊÂ²¿', 1, 'ÁªÍø¹«Ë¾-ÈËÊÂ²¿', to_date('04-03-2017 16:52:50', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (19, 'äººäº‹éƒ¨', 1, 'è”ç½‘å…¬å¸-äººäº‹éƒ¨', to_date('04-03-2017 16:52:50', 'dd-mm-yyyy hh24:mi:ss'), 1);
 commit;
 prompt 2 records loaded
 prompt Loading SYS_DICT...
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (80, 'goods_type', '1', '¼«ËÙ×¨Çø', 'ÉÌÆ·ÀàĞÍ-¼«ËÙ×¨Çø', 1);
+values (80, 'goods_type', '1', 'æé€Ÿä¸“åŒº', 'å•†å“ç±»å‹-æé€Ÿä¸“åŒº', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (33, 'user_status', '0', '¿ÉÓÃ', 'ÓÃ»§×´Ì¬-¿ÉÓÃ', 1);
+values (33, 'user_status', '0', 'å¯ç”¨', 'ç”¨æˆ·çŠ¶æ€-å¯ç”¨', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (34, 'user_status', '1', '½ûÓÃ', 'ÓÃ»§×´Ì¬-½ûÓÃ', 2);
+values (34, 'user_status', '1', 'ç¦ç”¨', 'ç”¨æˆ·çŠ¶æ€-ç¦ç”¨', 2);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (16, 'gender', '0', 'ÄĞ', 'ĞÔ±ğ-ÄĞ', 1);
+values (16, 'gender', '0', 'ç”·', 'æ€§åˆ«-ç”·', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (17, 'gender', '1', 'Å®', 'ĞÔ±ğ-Å®', 2);
+values (17, 'gender', '1', 'å¥³', 'æ€§åˆ«-å¥³', 2);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (26, 'user_type', '1', 'ÒÆ¶¯¶Ë', 'ÓÃ»§-ÒÆ¶¯¶Ë', 2);
+values (26, 'user_type', '1', 'ç§»åŠ¨ç«¯', 'ç”¨æˆ·-ç§»åŠ¨ç«¯', 2);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (29, 'menu_type', '0', '¸ùÄ¿Â¼', '²Ëµ¥ÀàĞÍ-¸úÄ¿Â¼', 1);
+values (29, 'menu_type', '0', 'æ ¹ç›®å½•', 'èœå•ç±»å‹-è·Ÿç›®å½•', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (25, 'user_type', '0', 'PC¶Ë', 'ÓÃ»§-PC¶Ë', 1);
+values (25, 'user_type', '0', 'PCç«¯', 'ç”¨æˆ·-PCç«¯', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (30, 'menu_type', '1', 'Ò»¼¶²Ëµ¥', '²Ëµ¥ÀàĞÍ-Ò»¼¶²Ëµ¥', 1);
+values (30, 'menu_type', '1', 'ä¸€çº§èœå•', 'èœå•ç±»å‹-ä¸€çº§èœå•', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (31, 'menu_type', '2', '¶ş¼¶²Ëµ¥', '²Ëµ¥ÀàĞÍ-¶ş¼¶²Ëµ¥', 1);
+values (31, 'menu_type', '2', 'äºŒçº§èœå•', 'èœå•ç±»å‹-äºŒçº§èœå•', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (32, 'menu_type', '3', '°´Å¥', '²Ëµ¥ÀàĞÍ-°´Å¥', 1);
+values (32, 'menu_type', '3', 'æŒ‰é’®', 'èœå•ç±»å‹-æŒ‰é’®', 1);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (78, 'goods_status', '2', 'ÒÑ·¢²¼', 'ÉÌÆ·×´Ì¬-ÒÑ·¢²¼', 2);
+values (78, 'goods_status', '2', 'å·²å‘å¸ƒ', 'å•†å“çŠ¶æ€-å·²å‘å¸ƒ', 2);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (79, 'goods_status', '3', 'ÒÑÏÂ¼Ü', 'ÉÌÆ·×´Ì¬-ÒÑÏÂ¼Ü', 3);
+values (79, 'goods_status', '3', 'å·²ä¸‹æ¶', 'å•†å“çŠ¶æ€-å·²ä¸‹æ¶', 3);
 insert into SYS_DICT (id, dict_group, dict_code, dict_name, dict_desp, order_by)
-values (77, 'goods_status', '1', '³õÊ¼»¯', 'ÉÌÆ·×´Ì¬-³õÊ¼»¯', 1);
+values (77, 'goods_status', '1', 'åˆå§‹åŒ–', 'å•†å“çŠ¶æ€-åˆå§‹åŒ–', 1);
 commit;
 prompt 14 records loaded
 prompt Loading SYS_MENU...
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (121, 'ĞÂÔöÉÌÆ·', '3', 'addGoods()', null, 'corn:goods:add', 119, null, to_date('31-05-2017 15:27:08', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (121, 'æ–°å¢å•†å“', '3', 'addGoods()', null, 'corn:goods:add', 119, null, to_date('31-05-2017 15:27:08', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (122, 'ĞŞ¸ÄÉÌÆ·', '3', 'editGoods()', null, 'corn:goods:edit', 119, null, to_date('31-05-2017 15:28:16', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (122, 'ä¿®æ”¹å•†å“', '3', 'editGoods()', null, 'corn:goods:edit', 119, null, to_date('31-05-2017 15:28:16', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (123, 'É¾³ıÉÌÆ·', '3', 'delGoods()', null, 'corn:goods:del', 119, null, to_date('31-05-2017 15:29:23', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (123, 'åˆ é™¤å•†å“', '3', 'delGoods()', null, 'corn:goods:del', 119, null, to_date('31-05-2017 15:29:23', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (124, '±£´æÉÌÆ·', '3', 'saveGoods()', null, 'corn:goods:save', 119, null, to_date('31-05-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (124, 'ä¿å­˜å•†å“', '3', 'saveGoods()', null, 'corn:goods:save', 119, null, to_date('31-05-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (119, 'ÉÌÆ·¹ÜÀí', '2', '/corn/goods', null, 'corn:goods:list', 47, null, to_date('26-05-2017 11:04:38', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (119, 'å•†å“ç®¡ç†', '2', '/corn/goods', null, 'corn:goods:list', 47, null, to_date('26-05-2017 11:04:38', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (47, 'ÉÌÆ·¹ÜÀí', '1', null, 'fa fa-home', null, 1, null, to_date('04-03-2017 14:28:00', 'dd-mm-yyyy hh24:mi:ss'), 20);
+values (47, 'å•†å“ç®¡ç†', '1', null, 'fa fa-home', null, 1, null, to_date('04-03-2017 14:28:00', 'dd-mm-yyyy hh24:mi:ss'), 20);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (25, 'ĞÂÔö²Ëµ¥', '3', 'addMenu()', null, 'sys:menu:add', 21, null, to_date('07-03-2017 15:59:27', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (25, 'æ–°å¢èœå•', '3', 'addMenu()', null, 'sys:menu:add', 21, null, to_date('07-03-2017 15:59:27', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (27, 'ĞŞ¸Ä²Ëµ¥', '3', 'updateMenu()', null, 'sys:menu:edit', 21, null, to_date('07-03-2017 16:02:03', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (27, 'ä¿®æ”¹èœå•', '3', 'updateMenu()', null, 'sys:menu:edit', 21, null, to_date('07-03-2017 16:02:03', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (28, 'É¾³ı²Ëµ¥', '3', 'delMenu()', null, 'sys:menu:del', 21, null, to_date('07-03-2017 16:02:28', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (28, 'åˆ é™¤èœå•', '3', 'delMenu()', null, 'sys:menu:del', 21, null, to_date('07-03-2017 16:02:28', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (21, '²Ëµ¥¹ÜÀí', '2', '/admin/sysMenu?leftMenu=21', null, 'sys:menu:list', 15, null, to_date('06-03-2017 18:22:34', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (21, 'èœå•ç®¡ç†', '2', '/admin/sysMenu?leftMenu=21', null, 'sys:menu:list', 15, null, to_date('06-03-2017 18:22:34', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (22, 'Êı¾İ×Öµä', '2', '/admin/sysDict?leftMenu=22', null, 'sys:dict:list', 15, null, to_date('06-03-2017 18:23:09', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (22, 'æ•°æ®å­—å…¸', '2', '/admin/sysDict?leftMenu=22', null, 'sys:dict:list', 15, null, to_date('06-03-2017 18:23:09', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (23, '½ÇÉ«¹ÜÀí', '2', '/admin/sysRole?leftMenu=23', null, 'sys:role:list', 15, null, to_date('06-03-2017 18:23:52', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (23, 'è§’è‰²ç®¡ç†', '2', '/admin/sysRole?leftMenu=23', null, 'sys:role:list', 15, null, to_date('06-03-2017 18:23:52', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (24, '×éÖ¯»ú¹¹¹ÜÀí', '2', '/admin/sysDept?leftMenu=24', null, 'sys:dept:list', 15, null, to_date('06-03-2017 18:24:21', 'dd-mm-yyyy hh24:mi:ss'), 5);
+values (24, 'ç»„ç»‡æœºæ„ç®¡ç†', '2', '/admin/sysDept?leftMenu=24', null, 'sys:dept:list', 15, null, to_date('06-03-2017 18:24:21', 'dd-mm-yyyy hh24:mi:ss'), 5);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (1, '¸ùÄ¿Â¼', '0', null, null, null, null, null, null, null);
+values (1, 'æ ¹ç›®å½•', '0', null, null, null, null, null, null, null);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (15, 'ÏµÍ³¹ÜÀí', '1', null, 'fa fa-home', null, 1, null, to_date('04-03-2017 14:28:00', 'dd-mm-yyyy hh24:mi:ss'), 10);
+values (15, 'ç³»ç»Ÿç®¡ç†', '1', null, 'fa fa-home', null, 1, null, to_date('04-03-2017 14:28:00', 'dd-mm-yyyy hh24:mi:ss'), 10);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (43, 'ĞÂÔöÓÃ»§', '3', 'addUser()', null, 'sys:user:add', 18, null, to_date('07-03-2017 17:14:00', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (43, 'æ–°å¢ç”¨æˆ·', '3', 'addUser()', null, 'sys:user:add', 18, null, to_date('07-03-2017 17:14:00', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (18, 'ÓÃ»§¹ÜÀí', '2', '/admin/sysUser?leftMenu=18', null, 'sys:user:list', 15, null, to_date('04-03-2017 15:02:58', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (18, 'ç”¨æˆ·ç®¡ç†', '2', '/admin/sysUser?leftMenu=18', null, 'sys:user:list', 15, null, to_date('04-03-2017 15:02:58', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (29, '±£´æ²Ëµ¥', '4', '/admin/sysMenu/saveMenu', null, 'sys:menu:save', 21, null, to_date('07-03-2017 16:55:28', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (29, 'ä¿å­˜èœå•', '4', '/admin/sysMenu/saveMenu', null, 'sys:menu:save', 21, null, to_date('07-03-2017 16:55:28', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (31, 'ĞÂÔöÊı¾İ×Öµä', '3', 'addDict()', null, 'sys:dict:add', 22, null, to_date('07-03-2017 17:03:52', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (31, 'æ–°å¢æ•°æ®å­—å…¸', '3', 'addDict()', null, 'sys:dict:add', 22, null, to_date('07-03-2017 17:03:52', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (32, 'ĞŞ¸ÄÊı¾İ×Öµä', '3', 'updateDict()', null, 'sys:dict:edit', 22, null, to_date('07-03-2017 17:05:02', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (32, 'ä¿®æ”¹æ•°æ®å­—å…¸', '3', 'updateDict()', null, 'sys:dict:edit', 22, null, to_date('07-03-2017 17:05:02', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (33, 'É¾³ıÊı¾İ×Öµä', '3', 'delDict()', null, 'sys:dict:del', 22, null, to_date('07-03-2017 17:05:43', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (33, 'åˆ é™¤æ•°æ®å­—å…¸', '3', 'delDict()', null, 'sys:dict:del', 22, null, to_date('07-03-2017 17:05:43', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (34, '±£´æÊı¾İ×Öµä', '4', '/admin/sysDict/saveDict', null, 'sys:dict:save', 22, null, to_date('07-03-2017 17:06:48', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (34, 'ä¿å­˜æ•°æ®å­—å…¸', '4', '/admin/sysDict/saveDict', null, 'sys:dict:save', 22, null, to_date('07-03-2017 17:06:48', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (35, 'ĞÂÔö½ÇÉ«', '3', 'addRole()', null, 'sys:role:add', 23, null, to_date('07-03-2017 17:07:53', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (35, 'æ–°å¢è§’è‰²', '3', 'addRole()', null, 'sys:role:add', 23, null, to_date('07-03-2017 17:07:53', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (36, 'ĞŞ¸Ä½ÇÉ«', '3', 'updateRole()', null, 'sys:role:edit', 23, null, to_date('07-03-2017 17:08:55', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (36, 'ä¿®æ”¹è§’è‰²', '3', 'updateRole()', null, 'sys:role:edit', 23, null, to_date('07-03-2017 17:08:55', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (37, 'É¾³ı½ÇÉ«', '3', 'delRole()', null, 'sys:role:del', 23, null, to_date('07-03-2017 17:09:33', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (37, 'åˆ é™¤è§’è‰²', '3', 'delRole()', null, 'sys:role:del', 23, null, to_date('07-03-2017 17:09:33', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (38, '±£´æ½ÇÉ«', '4', '/admin/sysRole/saveRole', null, 'sys:role:save', 23, null, to_date('07-03-2017 17:10:15', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (38, 'ä¿å­˜è§’è‰²', '4', '/admin/sysRole/saveRole', null, 'sys:role:save', 23, null, to_date('07-03-2017 17:10:15', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (39, 'ĞÂÔö²¿ÃÅ', '3', 'addDept()', null, 'sys:dept:add', 24, null, to_date('07-03-2017 17:10:53', 'dd-mm-yyyy hh24:mi:ss'), 1);
+values (39, 'æ–°å¢éƒ¨é—¨', '3', 'addDept()', null, 'sys:dept:add', 24, null, to_date('07-03-2017 17:10:53', 'dd-mm-yyyy hh24:mi:ss'), 1);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (40, 'ĞŞ¸Ä²¿ÃÅ', '3', 'updateDept()', null, 'sys:dept:edit', 24, null, to_date('07-03-2017 17:11:47', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (40, 'ä¿®æ”¹éƒ¨é—¨', '3', 'updateDept()', null, 'sys:dept:edit', 24, null, to_date('07-03-2017 17:11:47', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (41, 'É¾³ı²¿ÃÅ', '3', 'delDept()', null, 'sys:dept:del', 24, null, to_date('07-03-2017 17:12:21', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (41, 'åˆ é™¤éƒ¨é—¨', '3', 'delDept()', null, 'sys:dept:del', 24, null, to_date('07-03-2017 17:12:21', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (42, '±£´æ²¿ÃÅ', '4', '/admin/sysDept/saveDept', null, 'sys:dept:save', 24, null, to_date('07-03-2017 17:13:11', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (42, 'ä¿å­˜éƒ¨é—¨', '4', '/admin/sysDept/saveDept', null, 'sys:dept:save', 24, null, to_date('07-03-2017 17:13:11', 'dd-mm-yyyy hh24:mi:ss'), 4);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (44, 'ĞŞ¸ÄÓÃ»§', '3', 'updateUser()', null, 'sys:user:edit', 18, null, to_date('07-03-2017 17:14:40', 'dd-mm-yyyy hh24:mi:ss'), 2);
+values (44, 'ä¿®æ”¹ç”¨æˆ·', '3', 'updateUser()', null, 'sys:user:edit', 18, null, to_date('07-03-2017 17:14:40', 'dd-mm-yyyy hh24:mi:ss'), 2);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (45, 'É¾³ıÓÃ»§', '3', 'delUser()', null, 'sys:user:del', 18, null, to_date('07-03-2017 17:15:35', 'dd-mm-yyyy hh24:mi:ss'), 3);
+values (45, 'åˆ é™¤ç”¨æˆ·', '3', 'delUser()', null, 'sys:user:del', 18, null, to_date('07-03-2017 17:15:35', 'dd-mm-yyyy hh24:mi:ss'), 3);
 insert into SYS_MENU (id, name, type, url, icon, permissions, parent_id, remark, create_time, order_by)
-values (46, '±£´æÓÃ»§', '4', '/admin/sysUser/saveUser', null, 'sys:user:save', 18, null, to_date('07-03-2017 17:16:14', 'dd-mm-yyyy hh24:mi:ss'), 4);
+values (46, 'ä¿å­˜ç”¨æˆ·', '4', '/admin/sysUser/saveUser', null, 'sys:user:save', 18, null, to_date('07-03-2017 17:16:14', 'dd-mm-yyyy hh24:mi:ss'), 4);
 commit;
 prompt 33 records loaded
 prompt Loading SYS_ROLE...
 insert into SYS_ROLE (id, name, create_time, remark)
-values (11, '»ù±¾ÓÃ»§', to_timestamp('07-03-2017 14:19:49.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), '»ù±¾ÓÃ»§');
+values (11, 'åŸºæœ¬ç”¨æˆ·', to_timestamp('07-03-2017 14:19:49.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), 'åŸºæœ¬ç”¨æˆ·');
 insert into SYS_ROLE (id, name, create_time, remark)
-values (6, 'ÏµÍ³¹ÜÀíÔ±', to_timestamp('06-03-2017 17:34:45.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), 'ÓµÓĞÈ«²¿È¨Àû');
+values (6, 'ç³»ç»Ÿç®¡ç†å‘˜', to_timestamp('06-03-2017 17:34:45.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), 'æ‹¥æœ‰å…¨éƒ¨æƒåˆ©');
 commit;
 prompt 2 records loaded
 prompt Loading SYS_ROLE_MENU...
@@ -488,7 +488,7 @@ commit;
 prompt 49 records loaded
 prompt Loading SYS_USER...
 insert into SYS_USER (id, real_name, salt, gender, password, phone_no, email, create_time, last_login_date, user_name, wechat_no, open_id, wechat_attention_status, dept_id, ext1, ext2, ext3, status)
-values (26, 'ÕÅÈı', null, '0', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '18703676954', null, to_timestamp('07-03-2017 15:54:14.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, 'admin', '123', null, null, 19, null, null, null, '0');
+values (26, 'å¼ ä¸‰', null, '0', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '18703676954', null, to_timestamp('07-03-2017 15:54:14.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, 'admin', '123', null, null, 19, null, null, null, '0');
 insert into SYS_USER (id, real_name, salt, gender, password, phone_no, email, create_time, last_login_date, user_name, wechat_no, open_id, wechat_attention_status, dept_id, ext1, ext2, ext3, status)
 values (34, '11111', null, '0', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '18736000723', null, to_timestamp('04-05-2017 15:27:55.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, '1111', null, null, null, null, null, null, null, '0');
 commit;

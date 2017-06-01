@@ -31,10 +31,10 @@ public class UploadController extends BaseController {
     private Logger log = LoggerFactory.getLogger(UploadController.class);
 
     @ResponseBody
-    @RequestMapping(value = "upload" ,method = RequestMethod.POST)
+    @RequestMapping(value = "upload" )
     public Object upload(MultipartFile upfile,HttpServletRequest request){
         Calendar c = Calendar.getInstance();
-        String filedir = Configs.getProperty("file.upload.path");
+        String filedir=request.getSession().getServletContext().getRealPath("/upload");
         filedir = getFilePath(c,filedir);
         System.out.println(filedir);
         File dir = new File(filedir);

@@ -111,7 +111,7 @@ public class GenerateCode {
         pc.setXml(PATH_XML);
         pc.setService(PATH_SERVICE);
         pc.setServiceImpl(PATH_SERVICE_IMPL);
-        pc.setController(PATH_CONTROLLER_IMPL);
+//        pc.setController(PATH_CONTROLLER_IMPL);
 
         /* 生成代码 */
         AutoGeneratorFix autoGeneratorFix =  new AutoGeneratorFix();

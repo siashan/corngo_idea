@@ -10,6 +10,7 @@
 		<result column="USER_ID" property="userId" />
 		<result column="PRICE" property="price" />
 		<result column="TYPE" property="type" />
+		<result column="CONTENT" property="content" />
 		<result column="STATUS" property="status" />
 		<result column="IMG_URL" property="imgUrl" />
 	</resultMap>

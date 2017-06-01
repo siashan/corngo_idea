@@ -1,13 +1,9 @@
 package com.corngo.corn.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-import com.alibaba.fastjson.annotation.JSONType;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import java.util.Date;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.corngo.base.support.PUBConstants;
-
 import java.io.Serializable;
 
 /**
@@ -16,9 +12,8 @@ import java.io.Serializable;
  * </p>
  *
  * @author hanfc
- * @since 2017-05-26
+ * @since 2017-06-01
  */
-@JSONType(ignores = "")
 public class Goods extends Model<Goods> {
 
     private static final long serialVersionUID = 1L;
@@ -36,7 +31,6 @@ public class Goods extends Model<Goods> {
     /**
      * 创建时间
      */
-	@JSONField(format = PUBConstants.DEFAULT_FORMAT_DATE_JDK)
 	@TableField("CREATE_TIME")
 	private Date createTime;
     /**
@@ -54,6 +48,11 @@ public class Goods extends Model<Goods> {
      */
 	@TableField("TYPE")
 	private String type;
+    /**
+     * 商品详细
+     */
+	@TableField("CONTENT")
+	private String content;
     /**
      * 状态
      */
@@ -112,6 +111,14 @@ public class Goods extends Model<Goods> {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getStatus() {

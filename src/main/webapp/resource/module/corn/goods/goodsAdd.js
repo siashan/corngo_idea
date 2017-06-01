@@ -1,4 +1,10 @@
+var ue;
 $(document).ready(function () {
+
+    ue = UE.getEditor('myEditor', {
+
+    });
+
 
     inc.initUpload($("#imgUpLoad"),'form_up','upfile','upfile','',function(data){
         $('#licenseId').val(data.url);
@@ -45,6 +51,11 @@ $(document).ready(function () {
 });
 
 function mySubmit() {
+    $("#content").val(ue.getContent());
+    if ($("#content").val() == "") {
+        window.parent.layer.alert("请填写内容");
+        return;
+    }
     $("#form1").trigger("validate");
 }
 
@@ -62,7 +73,7 @@ function  change(){
         dataType: 'json', //返回值类型，一般设置为json、application/json
         success: function(data, status){
             if(data.state == 'SUCCESS'){
-                $("#image").attr('src', inc.ctx + "/fs/service/showImg?imgUrl="+data.url);
+                $("#image").attr('src', inc.ctx + "/upload/"+data.url);
                 $("#imgUrl").val(data.url);
                 window.parent.layer.close(imgLoading);
             }
@@ -72,3 +83,6 @@ function  change(){
         }
     });
 };
+
+
+
