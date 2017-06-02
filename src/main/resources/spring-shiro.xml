@@ -23,7 +23,6 @@
         <property name="filterChainDefinitions">
             <value>
                 /resource/**=anon
-                /upload/**=anon
                 /wechat/**=anon
                 /app/**=anon
                 /mobile/**=anon

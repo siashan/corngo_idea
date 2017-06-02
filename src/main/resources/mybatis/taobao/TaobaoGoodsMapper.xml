@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.taobao.mapper.TaobaoGoodsMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.corngo.taobao.model.TaobaoGoods">
+		<id column="ID" property="id" />
+		<result column="NAME" property="name" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="END_TIME" property="endTime" />
+		<result column="ORI_PRICE" property="oriPrice" />
+		<result column="RED_PRICE" property="redPrice" />
+		<result column="REAL_PRICE" property="realPrice" />
+		<result column="GOODS_URL" property="goodsUrl" />
+		<result column="RED_URL" property="redUrl" />
+		<result column="PLATE_TYPE" property="plateType" />
+		<result column="IMG_URL" property="imgUrl" />
+		<result column="STATUS" property="status" />
+		<result column="TYPE" property="type" />
+	</resultMap>
+
+</mapper>

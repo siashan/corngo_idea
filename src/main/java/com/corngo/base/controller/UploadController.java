@@ -34,7 +34,7 @@ public class UploadController extends BaseController {
     @RequestMapping(value = "upload" )
     public Object upload(MultipartFile upfile,HttpServletRequest request){
         Calendar c = Calendar.getInstance();
-        String filedir=request.getSession().getServletContext().getRealPath("/upload");
+        String filedir=request.getSession().getServletContext().getRealPath("/resource/upload/");
         filedir = getFilePath(c,filedir);
         System.out.println(filedir);
         File dir = new File(filedir);
@@ -107,7 +107,7 @@ public class UploadController extends BaseController {
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH) + 1;
         int day = c.get(Calendar.DATE);
-        filedir = filedir  + year + File.separator + (month<=9?"0"+month:month) + File.separator + ((day<=9?"0"+day:day));
+        filedir = filedir +File.separator  + year + File.separator + (month<=9?"0"+month:month) + File.separator + ((day<=9?"0"+day:day));
         return filedir;
     }
 

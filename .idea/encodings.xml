@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/bootstrap/bootstrap.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/bootstrap/bootstrap.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/fullcalendar.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/fullcalendar.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/fullcalendar.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/fullcalendar.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/fullcalendar.print.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/lib/moment.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/fullcalendar/locale/zh-cn.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/jquery/jquery-1.10.2.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/jquery/jquery-migrate-1.2.1.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/jquery/jquery-ui-1.9.2.custom.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/jquery/jquery.nicescroll.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/jquery/modernizr.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/scripts.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/supersized/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/supersized/css/loading.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/supersized/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/supersized/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/validate/images" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/validate/jquery.validator.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/validate/jquery.validator.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/validate/jquery.validator.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/validate/local" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/img/line_conn.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/img/line_conn.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/img/loading.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/img/metro.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/img/metro.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/css/metroStyle/metroStyle.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/lib/ztree/js" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

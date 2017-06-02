@@ -28,9 +28,9 @@ public class GenerateCode {
     /* 生成代码包名 */
     private static final String PACKAGE_NAME = "com.corngo";
     /* 生成代码模块名 */
-    private static final String MODEL_NAME = "corn";
+    private static final String MODEL_NAME = "taobao";
     /* 生成xml文件模块名 */
-    private static final String MODEL_NAME_RES = "corn";
+    private static final String MODEL_NAME_RES = "taobao";
     /* 生成文件保存位置*/
     private static final String OUTPUT_DIR = getRootPath() + "/src/main/java";
     /* 生成xml文件保存位置*/
@@ -39,7 +39,7 @@ public class GenerateCode {
     private static  String resourceDir =  "/resources";
     /*要生成的数据表名 【表名必须为大写】*/
 //    private static final String[]  TABLE_PREFIX = new String[] { "MOBILE_" }; // 此处可以修改为您的表前缀
-    private static final String[] TABLE_NAMES = new String[]{"GOODS"};
+    private static final String[] TABLE_NAMES = new String[]{"TAOBAO_GOODS"};
     protected static String PATH_ENTITY = null;
     protected static String PATH_MAPPER = null;
     protected static String PATH_XML = null;

@@ -1,10 +1,5 @@
-var ue;
+
 $(document).ready(function () {
-
-    ue = UE.getEditor('myEditor', {
-
-    });
-
 
     inc.initUpload($("#imgUpLoad"),'form_up','upfile','upfile','',function(data){
         $('#licenseId').val(data.url);
@@ -24,7 +19,7 @@ $(document).ready(function () {
                 });
             });
             $.ajax({
-                url: inc.ctx + "/corn/goods/save",
+                url: inc.ctx + "/taobao/goods/save",
                 data: $("#form1").serialize(),
                 dataType: "json",
                 type: "post",
@@ -36,7 +31,7 @@ $(document).ready(function () {
                         window.parent.layer.closeAll();
                         window.parent.layer.alert('保存成功', {icon: 1}, function (lIndex) {
                             var aFrame = inc.getActiveFrame();
-                           aFrame.src = inc.ctx+"/corn/goods";
+                           aFrame.src = inc.ctx+"/taobao/goods";
                             window.parent.layer.closeAll();
                         });
                     }
@@ -51,11 +46,6 @@ $(document).ready(function () {
 });
 
 function mySubmit() {
-    $("#content").val(ue.getContent());
-    if ($("#content").val() == "") {
-        window.parent.layer.alert("请填写内容");
-        return;
-    }
     $("#form1").trigger("validate");
 }
 
@@ -73,7 +63,7 @@ function  change(){
         dataType: 'json', //返回值类型，一般设置为json、application/json
         success: function(data, status){
             if(data.state == 'SUCCESS'){
-                $("#image").attr('src', inc.ctx + "/resource/upload/"+data.url);
+                $("#image").attr('src', inc.ctx + "/resource/upload"+data.url);
                 $("#imgUrl").val(data.url);
                 window.parent.layer.close(imgLoading);
             }
