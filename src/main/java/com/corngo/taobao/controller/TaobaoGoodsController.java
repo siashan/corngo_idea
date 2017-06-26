@@ -108,6 +108,7 @@ public class TaobaoGoodsController  extends BaseController{
      * @param id
      * @return
      */
+    @ResponseBody
     @RequiresPermissions("taobao:goods:del")
     @RequestMapping("del/{id}")
     public Object del(@PathVariable Long id ){
