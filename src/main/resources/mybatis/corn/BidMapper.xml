@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.corn.mapper.BidMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.corngo.corn.model.Bid">
+		<id column="ID" property="id" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="USER_ID" property="userId" />
+		<result column="GOODS_ID" property="goodsId" />
+		<result column="START_TIME" property="startTime" />
+		<result column="END_TIME" property="endTime" />
+		<result column="STATUS" property="status" />
+		<result column="BID_NO" property="bidNo" />
+		<result column="VERSION" property="version" />
+		<result column="OVER_TIME" property="overTime" />
+	</resultMap>
+
+</mapper>

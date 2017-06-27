@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corngo.corn.mapper.PostAddressMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.corngo.corn.model.PostAddress">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="ZIP_CODE" property="zipCode" />
+		<result column="ADDRESS" property="address" />
+		<result column="IS_DEFAULT" property="isDefault" />
+		<result column="MOBILE" property="mobile" />
+		<result column="ADDRESSEE" property="addressee" />
+		<result column="CREATE_TIME" property="createTime" />
+	</resultMap>
+
+</mapper>
