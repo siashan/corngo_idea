@@ -39,7 +39,7 @@ public class GenerateCode {
     private static  String resourceDir =  "/resources";
     /*要生成的数据表名 【表名必须为大写】*/
 //    private static final String[]  TABLE_PREFIX = new String[] { "MOBILE_" }; // 此处可以修改为您的表前缀
-    private static final String[] TABLE_NAMES = new String[]{"POST_ADDRESS"};
+    private static final String[] TABLE_NAMES = new String[]{"BID_INVEST"};
     protected static String PATH_ENTITY = null;
     protected static String PATH_MAPPER = null;
     protected static String PATH_XML = null;
