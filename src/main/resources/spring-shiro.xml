@@ -29,6 +29,7 @@
                 /fs/**=anon
                 /open/**=anon
                 /valid/**=anon
+                /webSocketServer=anon
                 /admin/passport/login=anon
                 /admin/passport/logout=anon
                 /admin/passport/404=anon

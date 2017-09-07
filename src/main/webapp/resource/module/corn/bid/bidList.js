@@ -2,7 +2,7 @@ var gridObj;
 
 $(function () {
     gridObj = $.fn.bsgrid.init('searchTable', {
-        url: inc.ctx + '/corn/goods/json',
+        url: inc.ctx + '/corn/bid/json',
         pageSizeSelect: true,
         stripeRows: true,
         displayBlankRows: false,
@@ -94,7 +94,7 @@ function pubBid() {
 
 function getStatus(record, rowIndex, colIndex, options){
     var my = gridObj.getRecordIndexValue(record, 'status');
-    return eval('goodsStatus.d_' + my);
+    return eval('bidStatus.d_' + my);
 }
 
 

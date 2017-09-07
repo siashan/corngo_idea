@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'菜单管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/lib/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+    <style>
+        table.bsgrid {
+            width: 98%;
+            margin-right: 5px;
+            border-collapse: collapse;
+        }
+
+        .bsgrid {
+            font-size: 13px;
+            font-family: 微软雅黑, Verdana, sans-serif, 宋体, serif;
+        }
+
+        .bsgrid th, .bsgrid td {
+            border: solid 1px #ccc;
+            background-color: white;
+            color: #333;
+            line-height: 1.8em;
+        }
+
+        .bsgrid tr.selected td {
+            background-color: #e0e0e0 !important;
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 45px;
+            left: 25px;
+            width: 95%;
+            z-index: 1030
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+
+<section>
+
+    <!-- main content start-->
+    <div class="main-content iframe-main-content">
+
+        <!-- header section end-->
+        <!-- page heading start-->
+        <div class="page-heading">
+
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.js"></script>
+
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+
+<script src="${ctxPath}/resource/lib/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+<script src="${ctxPath}/resource/lib/sockjs/sockjs.min.js"></script>
+
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script>
+    window.onload = function  () {
+        inc.resizeFrame();
+    }
+
+
+    var  ws;
+    window.onload=connect;
+    function connect(){
+        if ('WebSocket' in window) {
+            ws = new WebSocket("ws://127.0.0.1:8081/corngo/webSocketServer");
+        } else if ('MozWebSocket' in window) {
+            ws = new MozWebSocket("ws://127.0.0.1:8081/corngo/webSocketServer");
+        } else {
+            //如果是低版本的浏览器，则用SockJS这个对象，对应了后台“sockjs/webSocketServer”这个注册器，
+            //它就是用来兼容低版本浏览器的
+            ws = new SockJS("http://127.0.0.1:8081/corngo/sockjs/webSocketServer");
+        }
+        ws.onopen = function (evnt) {
+
+        };
+        ws.onmessage = function (evnt) {
+           console.info(eval(evnt.data));
+
+
+        };
+        ws.onerror = function (evnt) {
+        };
+        ws.onclose = function (evnt) {
+        }
+    }
+
+    function  wssend(){
+        var value= "hello world";
+        ws.send("1111");
+    }
+
+    var intI = setInterval('wssend()', 2000); //指定1秒刷新一次
+
+</script>
+</body>
+</html>

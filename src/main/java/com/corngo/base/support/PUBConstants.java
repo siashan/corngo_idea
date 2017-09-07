@@ -6,6 +6,11 @@ package com.corngo.base.support;
  * Created by kfc on 2016/6/29.
  */
 public class PUBConstants {
+
+    public static final String SESSION_CUR_USER = "_scu";
+    public static final String SESSION_USER_FUND = "_suf";
+    public static final String SESSION_CUR_USER_OBJ = "_scu_obj";
+    public static final String CURRENT_WEBSOCKET_USER = "_scu_websocket_obj";
     /**
      * 默认分页大小
      */
@@ -90,4 +95,19 @@ public class PUBConstants {
         public static final String COLOSED = "3";    //   已下架
     }
 
+    /**
+     * 商品发布状态
+     */
+    public static class GoodsPubStatus {
+        public static final String CAN = "0";          //   可以发布
+        public static final String CAN_NOT = "1";   //    不能发布
+    }
+
+    /**
+     * 标的状态
+     */
+    public static class BidStatus {
+        public static final String  INIT= "0";          //  筹款中
+        public static final String DONE = "1";   //    已满标
+    }
 }

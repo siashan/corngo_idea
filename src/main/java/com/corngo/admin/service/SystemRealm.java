@@ -81,7 +81,7 @@ public class SystemRealm extends AuthorizingRealm {
             if (menu.getType().equals("1")){
                 ArrayList<SysMenu> child = new ArrayList<>();
                 for (SysMenu m:menus){
-                    System.out.println("parentId:"+m.getParentId() + "---mId:"+menu.getId() +"---"+(m.getParentId() == menu.getId()) + "---"+((long)m.getParentId() == (long)menu.getId()));
+//                    System.out.println("parentId:"+m.getParentId() + "---mId:"+menu.getId() +"---"+(m.getParentId() == menu.getId()) + "---"+((long)m.getParentId() == (long)menu.getId()));
                     if ((long)m.getParentId() == (long)menu.getId()){
                         child.add(m);
                     }

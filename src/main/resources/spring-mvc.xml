@@ -30,9 +30,9 @@
         </mvc:message-converters>
 
         <!-- 注册session获取为注解获取 -->
-        <!--<mvc:argument-resolvers>-->
-            <!--<bean class="com.baijindai.base.support.argumentResolver.SessionScopeMethod"/>-->
-        <!--</mvc:argument-resolvers>-->
+        <mvc:argument-resolvers>
+            <bean class="com.corngo.base.support.argumentResolver.SessionScopeMethod"/>
+        </mvc:argument-resolvers>
     </mvc:annotation-driven>
 
     <!-- 静态资源映射 -->

@@ -4512,7 +4512,7 @@ var filterWord = UM.filterWord = function () {
         script:1
     };
 
-    var indentChar = '    ',
+    var indentChar = '',
         breakChar = '\n';
 
     function insertLine(arr, current, begin) {

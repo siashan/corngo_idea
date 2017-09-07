@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%include("/inc/meta.html",{'title':'商品'}){}%>
+    <%include("/inc/meta.html",{'title':'标的'}){}%>
     <!--common-->
     <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
     <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
@@ -54,10 +54,7 @@
                             <div class="adv-table">
                                 <div class="clearfix">
                                     <div class="btn-group">
-                                        <#button id="editable-sample_new" class="btn btn-primary" value = "新增 " s="corn:goods:add"  func = "addGoods()" icon = "fa fa-plus" req = "${request}" />
-                                        <#button id="editable-sample_new" class="btn btn-primary" value = "修改 " s="corn:goods:edit" func = "editGoods()" icon = "fa fa-edit" req = "${request}" />
-                                        <#button id="editable-sample_new" class="btn btn-primary" value = "删除 " s="corn:goods:del" func = "delGoods()" icon = "fa fa-trash-o" req = "${request}" />
-                                        <#button id="editable-sample_new" class="btn btn-primary" value = "发布标的 " s="corn:goods:toPublishBid" func = "pubBid()" icon = "fa fa-trash-o" req = "${request}" />
+
                                     </div>
                                     <div class="btn-group" style="float:right;margin-right: 2%;">
                                         <button class="btn btn-success" type="button" id="searchBtn">查询<i
@@ -71,11 +68,11 @@
                                 <table id="searchTable">
                                     <tr>
                                         <th w_hidden="true" w_index="id" width="10%;"></th>
-                                        <th w_index="name" width="10%">商品名称</th>
+                                        <th w_index="title" width="10%">标的名称</th>
                                         <th w_index="createTime" width="10%;">创建时间</th>
-                                        <th w_index="price" width="10%;">价格(元)</th>
-                                        <th w_index="type" width="10%;">类型</th>
-                                        <th w_index="lastBidNo" width="10%;">最新一期</th>
+                                        <th w_index="amount" width="10%;">价格(元)</th>
+                                        <th w_index="receiveAmount" width="10%;">已投价格</th>
+                                        <th w_index="userId" width="10%;">发布人Id</th>
                                         <th w_render="getStatus" width="10%;">状态</th>
                                     </tr>
                                 </table>
@@ -101,9 +98,9 @@
 <!--<script src="${ctxPath}/resource/lib/layer/layer.js"></script>-->
 <!--common scripts for all pages-->
 <script src="${ctxPath}/resource/lib/scripts.js"></script>
-<script src="${ctxPath}/resource/module/corn/goods/goodsList.js"></script>
+<script src="${ctxPath}/resource/module/corn/bid/bidList.js"></script>
 <script>
-    var goodsStatus = ${goodsStatus};
+    var bidStatus = ${bidStatus};
 </script>
 </body>
 </html>

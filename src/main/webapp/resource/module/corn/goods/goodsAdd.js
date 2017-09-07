@@ -1,9 +1,23 @@
 var ue;
 $(document).ready(function () {
 
-    ue = UE.getEditor('myEditor', {
+    //ue = UE.getEditor('myEditor', {
+    //
+    //});
 
+
+
+    ue = UM.getEditor('myEditor', {
+        imageUrl: inc.ctx + inc.fs,
+        imagePath: inc.preview,
+        emotionLocalization: true,
+        allowDivTransToP: false,
+        indentValue:''
     });
+
+
+
+
 
 
     inc.initUpload($("#imgUpLoad"),'form_up','upfile','upfile','',function(data){

@@ -39,7 +39,7 @@ public class GenerateCode {
     private static  String resourceDir =  "/resources";
     /*要生成的数据表名 【表名必须为大写】*/
 //    private static final String[]  TABLE_PREFIX = new String[] { "MOBILE_" }; // 此处可以修改为您的表前缀
-    private static final String[] TABLE_NAMES = new String[]{"BID_INVEST"};
+    private static final String[] TABLE_NAMES = new String[]{"USERS"};
     protected static String PATH_ENTITY = null;
     protected static String PATH_MAPPER = null;
     protected static String PATH_XML = null;
@@ -111,7 +111,7 @@ public class GenerateCode {
         pc.setXml(PATH_XML);
         pc.setService(PATH_SERVICE);
         pc.setServiceImpl(PATH_SERVICE_IMPL);
-        pc.setController(PATH_CONTROLLER_IMPL);
+//        pc.setController(PATH_CONTROLLER_IMPL);
 
         /* 生成代码 */
         AutoGeneratorFix autoGeneratorFix =  new AutoGeneratorFix();

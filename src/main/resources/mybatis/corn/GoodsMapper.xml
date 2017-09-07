@@ -5,6 +5,8 @@
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.corngo.corn.model.Goods">
 		<id column="ID" property="id" />
+		<result column="PUBLISH_STATUS" property="publishStatus" />
+		<result column="LAST_BID_NO" property="lastBidNo" />
 		<result column="NAME" property="name" />
 		<result column="CREATE_TIME" property="createTime" />
 		<result column="USER_ID" property="userId" />

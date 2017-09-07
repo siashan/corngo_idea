@@ -10,6 +10,10 @@
 		<result column="PASSWORD" property="password" />
 		<result column="SALT" property="salt" />
 		<result column="NAME" property="name" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="RECOMMEND_USER_ID" property="recommendUserId" />
+		<result column="RECOMMEND_TIME" property="recommendTime" />
+		<result column="GENDER" property="gender" />
 	</resultMap>
 
 </mapper>

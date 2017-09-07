@@ -34,7 +34,9 @@ public class UploadController extends BaseController {
     @RequestMapping(value = "upload" )
     public Object upload(MultipartFile upfile,HttpServletRequest request){
         Calendar c = Calendar.getInstance();
-        String filedir=request.getSession().getServletContext().getRealPath("/resource/upload/");
+//        String filedir=request.getSession().getServletContext().getRealPath("/resource/upload/");
+        String filedir=Configs.getProperty("file.upload.path");
+
         filedir = getFilePath(c,filedir);
         System.out.println(filedir);
         File dir = new File(filedir);

@@ -12,12 +12,22 @@ import java.io.Serializable;
  * </p>
  *
  * @author hanfc
- * @since 2017-06-01
+ * @since 2017-06-27
  */
 public class Goods extends Model<Goods> {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 是否能够发布商品 （0 能够  1 已有正在筹资的商品不能发布）
+     */
+	@TableField("PUBLISH_STATUS")
+	private String publishStatus;
+    /**
+     * 最新一期标的编号
+     */
+	@TableField("LAST_BID_NO")
+	private Integer lastBidNo;
     /**
      * ID
      */
@@ -64,6 +74,22 @@ public class Goods extends Model<Goods> {
 	@TableField("IMG_URL")
 	private String imgUrl;
 
+
+	public String getPublishStatus() {
+		return publishStatus;
+	}
+
+	public void setPublishStatus(String publishStatus) {
+		this.publishStatus = publishStatus;
+	}
+
+	public Integer getLastBidNo() {
+		return lastBidNo;
+	}
+
+	public void setLastBidNo(Integer lastBidNo) {
+		this.lastBidNo = lastBidNo;
+	}
 
 	public Long getId() {
 		return id;

@@ -5,13 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 微信消息
+ * 移动端
  * <p/>
  * Created by kfc on 2017/1/6.
  */
 @Controller
 @RequestMapping("wechat/service")
-public class WechatServiceController extends BaseController {
+public class MobilePassportController extends BaseController {
 
 
 }

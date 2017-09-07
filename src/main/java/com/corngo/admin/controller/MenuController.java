@@ -1,11 +1,13 @@
 package com.corngo.admin.controller;
 
 import com.corngo.admin.model.SysMenu;
+import com.corngo.admin.model.SysUser;
 import com.corngo.admin.service.ISysDictService;
 import com.corngo.admin.service.ISysMenuService;
 import com.corngo.base.support.controller.BaseController;
 import com.corngo.base.support.utils.IdUtils;
 import com.corngo.base.support.utils.Response;
+import com.corngo.base.support.utils.Shiro;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +43,8 @@ public class MenuController extends BaseController {
     public String toSysMenu(Model model){
         List<SysMenu> sysMenus = sysMenuService.selectTree();
         model.addAttribute("treedata",sysMenus);
-
+        SysUser user = Shiro.getUser();
+        System.out.println(user.getId());
         return "admin/sysMenu/menuList";       
     }
 

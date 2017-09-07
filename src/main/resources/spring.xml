@@ -3,18 +3,21 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!-- Service包(自动注入) -->
-    <!--<context:component-scan base-package="com.corngo"/>-->
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/websocket
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd"
+        >
+
+    <!--websocket包自动扫描-->
+    <context:component-scan base-package="com.corngo.webSocket"/>
     <context:component-scan base-package="com.corngo.*.service"/>
-    <!--<context:component-scan base-package="com.corngo">-->
-        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
-    <!--</context:component-scan>-->
+
     <!--spring读取配置文件-->
     <bean id="propertyConfig" class="com.corngo.base.support.spring.Configs">
         <property name="locations">
@@ -26,6 +29,18 @@
     <bean id="pringContextHolder" class="com.corngo.base.support.spring.SpringContextHolder"></bean>
     <bean id="wechatUtil" class="com.corngo.wechat.util.WechatUtil"></bean>
     <bean id="cacheService" class="com.corngo.base.support.cache.JoddCacheService"></bean>
+
+
+    <websocket:handlers >
+        <websocket:mapping path="/springws/websocket.ws" handler="demoWSHandler"/>
+        <websocket:handshake-interceptors>
+            <bean class="com.corngo.webSocket.MyWebSocketInterceptor"/>
+        </websocket:handshake-interceptors>
+        <!--使用sockjsde的话,必须加上-->
+        <websocket:sockjs/>
+    </websocket:handlers>
+
+    <bean id="demoWSHandler" class="com.corngo.webSocket.WebSocketPushHandler"/>
 
     <!--AOP自动代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>

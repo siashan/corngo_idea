@@ -14,6 +14,9 @@
 		<result column="BID_NO" property="bidNo" />
 		<result column="VERSION" property="version" />
 		<result column="OVER_TIME" property="overTime" />
+		<result column="AMOUNT" property="amount" />
+		<result column="RECEIVE_AMOUNT" property="receiveAmount" />
+		<result column="TITLE" property="title" />
 	</resultMap>
 
 </mapper>

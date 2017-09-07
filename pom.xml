@@ -18,6 +18,25 @@
 
 
   <dependencies>
+
+    <!--websecokt    必须和spring的jar版本保持一致-->
+
+    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <scope>provided</scope>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-messaging</artifactId>
+      <version>${spring}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-websocket</artifactId>
+      <version>${spring}</version>
+    </dependency>
     <!--日志组件 -->
     <dependency>
       <groupId>org.slf4j</groupId>

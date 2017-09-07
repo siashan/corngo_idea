@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include("/inc/meta.html",{'title':'用户管理'}){}%>
+    <!--common-->
+    <link href="${ctxPath}/resource/css/style.css" rel="stylesheet">
+    <link href="${ctxPath}/resource/css/css.css" rel="stylesheet">
+    <link rel="stylesheet" href="${ctxPath}/resource/lib/bsgrid/merged/grid.simple.min.css"/>
+    <link rel="stylesheet" href="${ctxPath}/resource/lib/bsgrid/css/skins/grid_bootstrap.min.css"/>
+    <script src="${ctxPath}/resource/lib/laydate/laydate.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <![endif]-->
+    <style>
+        .laydate_body .laydate_y .laydate_yms ul li{
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side end-->
+    <!-- main content start-->
+    <div class="main-content iframe-main-content" >
+        <div class="page-heading">
+            <form class="form-horizontal" role="form" id="searchForm">
+                <div class="form-group">
+                    <label for="name" class="col-lg-1 col-sm-1 control-label">用户名</label>
+
+                    <div class="col-lg-2 col-sm-2">
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+
+                    <label for="mobile" class="col-lg-1 col-sm-1 control-label">手机号</label>
+
+                    <div class="col-lg-2 col-sm-2">
+                        <input type="text" class="form-control" id="mobile" name="mobile">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-lg-1 col-sm-1 control-label">创建时间</label>
+
+                    <div class="col-lg-2 col-sm-2">
+                        <input type="text" class="form-control" id="startTime" name="startTime" placeholder="开始时间" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2">
+                        <input type="text" class="form-control" id="endTime" name="endTime" placeholder="结束时间" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <div class="clearfix">
+                                    <div class="btn-group">
+
+                                    </div>
+                                    <div class="btn-group" style="float:right;margin-right: 2%;">
+                                        <button class="btn btn-success" type="button" id="searchBtn">查询<i
+                                                class="fa fa-book"></i></button>
+                                        <button class="btn btn-success" type="button" id="resetBtn">重置<i
+                                                class="fa fa-mail-reply"></i></button>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="space15"></div>
+                                <table id="searchTable">
+									<tr>
+									    <th w_hidden="true" w_index="id" width="10%;"></th>
+									    <th w_index="name" width="10%">用户名</th>
+									    <th w_index="mobile" width="10%;">手机号</th>
+									    <th w_index="openId" width="10%;">微信号</th>
+									    <th w_index="createTime" width="10%;">创建时间</th>
+									    <th w_render="getStatus" width="10%;">状态</th>
+									</tr>
+									</table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="${ctxPath}/resource/lib/jquery/jquery-1.10.2.min.js"></script>
+<script src="${ctxPath}/resource/lib/layer/layer.js"></script>
+
+<script src="${ctxPath}/resource/lib/bootstrap/bootstrap.min.js"></script>
+<script src="${ctxPath}/resource/lib/jquery/jquery.nicescroll.js"></script>
+<!--bsgrid-->
+<script src="${ctxPath}/resource/lib/bsgrid/merged/bsgrid.all.min.js"></script>
+<script src="${ctxPath}/resource/lib/bsgrid/js/lang/grid.zh-CN.min.js"></script>
+<!--common scripts for all pages-->
+<script src="${ctxPath}/resource/lib/scripts.js"></script>
+<script src="${ctxPath}/resource/module/corn/user/userList.js"></script>
+<script>
+    var userStatus = ${userStatus!};
+</script>
+</body>
+</html>

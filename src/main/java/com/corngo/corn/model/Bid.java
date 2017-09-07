@@ -68,6 +68,21 @@ public class Bid extends Model<Bid> {
      */
 	@TableField("OVER_TIME")
 	private Date overTime;
+    /**
+     * 总金额
+     */
+	@TableField("AMOUNT")
+	private Double amount;
+    /**
+     * 已投金额
+     */
+	@TableField("RECEIVE_AMOUNT")
+	private Double receiveAmount;
+    /**
+     * 标题
+     */
+	@TableField("TITLE")
+	private String title;
 
 
 	public Long getId() {
@@ -148,6 +163,30 @@ public class Bid extends Model<Bid> {
 
 	public void setOverTime(Date overTime) {
 		this.overTime = overTime;
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public Double getReceiveAmount() {
+		return receiveAmount;
+	}
+
+	public void setReceiveAmount(Double receiveAmount) {
+		this.receiveAmount = receiveAmount;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	@Override
